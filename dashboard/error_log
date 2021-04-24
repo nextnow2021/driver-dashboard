@@ -1,0 +1,64 @@
+[05-Apr-2021 17:22:34 Africa/Johannesburg] PHP Notice:  Undefined variable: cnt in /home/nextnowa/public_html/driver-dashboard/dashboard/mydocument.php on line 360
+[05-Apr-2021 17:22:34 Africa/Johannesburg] PHP Notice:  Undefined variable: cnt in /home/nextnowa/public_html/driver-dashboard/dashboard/mydocument.php on line 369
+[06-Apr-2021 10:14:10 Africa/Johannesburg] PHP Notice:  Undefined variable: cnt in /home/nextnowa/public_html/driver-dashboard/dashboard/mydocument.php on line 360
+[06-Apr-2021 10:14:10 Africa/Johannesburg] PHP Notice:  Undefined variable: cnt in /home/nextnowa/public_html/driver-dashboard/dashboard/mydocument.php on line 369
+[06-Apr-2021 10:18:00 Africa/Johannesburg] PHP Warning:  Use of undefined constant php - assumed 'php' (this will throw an Error in a future version of PHP) in /home/nextnowa/public_html/driver-dashboard/dashboard/mydocument.php on line 454
+[06-Apr-2021 10:25:30 Africa/Johannesburg] PHP Parse error:  syntax error, unexpected '}' in /home/nextnowa/public_html/driver-dashboard/dashboard/profile.php on line 612
+[06-Apr-2021 10:27:47 Africa/Johannesburg] PHP Parse error:  syntax error, unexpected '}' in /home/nextnowa/public_html/driver-dashboard/dashboard/profile.php on line 612
+[06-Apr-2021 10:29:09 Africa/Johannesburg] PHP Notice:  Undefined variable: row in /home/nextnowa/public_html/driver-dashboard/dashboard/profile.php on line 611
+[06-Apr-2021 10:29:09 Africa/Johannesburg] PHP Notice:  Trying to access array offset on value of type null in /home/nextnowa/public_html/driver-dashboard/dashboard/profile.php on line 611
+[06-Apr-2021 10:45:06 Africa/Johannesburg] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function DocumentClass::uploadfile(), 6 passed in /home/nextnowa/public_html/driver-dashboard/dashboard/mydocument.php on line 27 and exactly 7 expected in /home/nextnowa/public_html/driver-dashboard/dashboard/action.php:7
+Stack trace:
+#0 /home/nextnowa/public_html/driver-dashboard/dashboard/mydocument.php(27): DocumentClass->uploadfile('MicrosoftTeams-...', 'Ankita Mishra', '8291623616', 'ankita@nextnow....', 'Sai Ganesh Apar...', 'Maharashtra')
+#1 {main}
+  thrown in /home/nextnowa/public_html/driver-dashboard/dashboard/action.php on line 7
+[06-Apr-2021 10:45:42 Africa/Johannesburg] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function DocumentClass::uploadfile(), 6 passed in /home/nextnowa/public_html/driver-dashboard/dashboard/mydocument.php on line 27 and exactly 7 expected in /home/nextnowa/public_html/driver-dashboard/dashboard/action.php:7
+Stack trace:
+#0 /home/nextnowa/public_html/driver-dashboard/dashboard/mydocument.php(27): DocumentClass->uploadfile('ec5-demo-projec...', 'Amit Singh', '9999999999', 'amysingh4966@gm...', '1234', 'Maharastra')
+#1 {main}
+  thrown in /home/nextnowa/public_html/driver-dashboard/dashboard/action.php on line 7
+[06-Apr-2021 10:45:54 Africa/Johannesburg] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function DocumentClass::uploadfile(), 6 passed in /home/nextnowa/public_html/driver-dashboard/dashboard/mydocument.php on line 27 and exactly 7 expected in /home/nextnowa/public_html/driver-dashboard/dashboard/action.php:7
+Stack trace:
+#0 /home/nextnowa/public_html/driver-dashboard/dashboard/mydocument.php(27): DocumentClass->uploadfile('Screenshot (4)....', 'Ritesh Patel', '9004799961', 'ritesh@nextnow....', 'Dombivali', 'Maharashtra')
+#1 {main}
+  thrown in /home/nextnowa/public_html/driver-dashboard/dashboard/action.php on line 7
+[06-Apr-2021 10:46:09 Africa/Johannesburg] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function DocumentClass::uploadfile(), 6 passed in /home/nextnowa/public_html/driver-dashboard/dashboard/mydocument.php on line 27 and exactly 7 expected in /home/nextnowa/public_html/driver-dashboard/dashboard/action.php:7
+Stack trace:
+#0 /home/nextnowa/public_html/driver-dashboard/dashboard/mydocument.php(27): DocumentClass->uploadfile('Screenshot (4)....', 'Ritesh Patel', '9004799961', 'ritesh@nextnow....', 'Dombivali', 'Maharashtra')
+#1 {main}
+  thrown in /home/nextnowa/public_html/driver-dashboard/dashboard/action.php on line 7
+[06-Apr-2021 10:46:23 Africa/Johannesburg] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function DocumentClass::uploadfile(), 6 passed in /home/nextnowa/public_html/driver-dashboard/dashboard/mydocument.php on line 27 and exactly 7 expected in /home/nextnowa/public_html/driver-dashboard/dashboard/action.php:7
+Stack trace:
+#0 /home/nextnowa/public_html/driver-dashboard/dashboard/mydocument.php(27): DocumentClass->uploadfile('Screenshot (4)....', 'Ritesh Patel', '9004799961', 'ritesh@nextnow....', 'Dombivali', 'Maharashtra')
+#1 {main}
+  thrown in /home/nextnowa/public_html/driver-dashboard/dashboard/action.php on line 7
+[06-Apr-2021 10:47:15 Africa/Johannesburg] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function DocumentClass::uploadfile(), 6 passed in /home/nextnowa/public_html/driver-dashboard/dashboard/mydocument.php on line 27 and exactly 7 expected in /home/nextnowa/public_html/driver-dashboard/dashboard/action.php:7
+Stack trace:
+#0 /home/nextnowa/public_html/driver-dashboard/dashboard/mydocument.php(27): DocumentClass->uploadfile('ec5-demo-projec...', 'Amit Singh', '9999999999', 'amysingh4966@gm...', '1234', 'Maharastra')
+#1 {main}
+  thrown in /home/nextnowa/public_html/driver-dashboard/dashboard/action.php on line 7
+[06-Apr-2021 10:47:19 Africa/Johannesburg] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function DocumentClass::uploadfile(), 6 passed in /home/nextnowa/public_html/driver-dashboard/dashboard/mydocument.php on line 27 and exactly 7 expected in /home/nextnowa/public_html/driver-dashboard/dashboard/action.php:7
+Stack trace:
+#0 /home/nextnowa/public_html/driver-dashboard/dashboard/mydocument.php(27): DocumentClass->uploadfile('MicrosoftTeams-...', 'Ankita Mishra', '8291623616', 'ankita@nextnow....', 'Sai Ganesh Apar...', 'Maharashtra')
+#1 {main}
+  thrown in /home/nextnowa/public_html/driver-dashboard/dashboard/action.php on line 7
+[06-Apr-2021 10:48:24 Africa/Johannesburg] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function DocumentClass::uploadfile(), 6 passed in /home/nextnowa/public_html/driver-dashboard/dashboard/mydocument.php on line 27 and exactly 7 expected in /home/nextnowa/public_html/driver-dashboard/dashboard/action.php:7
+Stack trace:
+#0 /home/nextnowa/public_html/driver-dashboard/dashboard/mydocument.php(27): DocumentClass->uploadfile('pexels-photo-73...', 'Vanita Malkar', '7875987069', 'vanitamalkar13@...', 'Kalyan', 'Maharashtra')
+#1 {main}
+  thrown in /home/nextnowa/public_html/driver-dashboard/dashboard/action.php on line 7
+[06-Apr-2021 10:48:37 Africa/Johannesburg] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function DocumentClass::uploadfile(), 6 passed in /home/nextnowa/public_html/driver-dashboard/dashboard/mydocument.php on line 27 and exactly 7 expected in /home/nextnowa/public_html/driver-dashboard/dashboard/action.php:7
+Stack trace:
+#0 /home/nextnowa/public_html/driver-dashboard/dashboard/mydocument.php(27): DocumentClass->uploadfile('Screenshot (4)....', 'Ritesh Patel', '9004799961', 'ritesh@nextnow....', 'Dombivali', 'Maharashtra')
+#1 {main}
+  thrown in /home/nextnowa/public_html/driver-dashboard/dashboard/action.php on line 7
+[06-Apr-2021 10:56:16 Africa/Johannesburg] PHP Warning:  Use of undefined constant php - assumed 'php' (this will throw an Error in a future version of PHP) in /home/nextnowa/public_html/driver-dashboard/dashboard/mydocument.php on line 455
+[06-Apr-2021 10:56:29 Africa/Johannesburg] PHP Warning:  Use of undefined constant php - assumed 'php' (this will throw an Error in a future version of PHP) in /home/nextnowa/public_html/driver-dashboard/dashboard/mydocument.php on line 455
+[06-Apr-2021 10:57:23 Africa/Johannesburg] PHP Warning:  Use of undefined constant php - assumed 'php' (this will throw an Error in a future version of PHP) in /home/nextnowa/public_html/driver-dashboard/dashboard/mydocument.php on line 455
+[06-Apr-2021 12:07:04 Africa/Johannesburg] PHP Warning:  Use of undefined constant php - assumed 'php' (this will throw an Error in a future version of PHP) in /home/nextnowa/public_html/driver-dashboard/dashboard/mydocument.php on line 455
+[06-Apr-2021 12:07:43 Africa/Johannesburg] PHP Warning:  Use of undefined constant php - assumed 'php' (this will throw an Error in a future version of PHP) in /home/nextnowa/public_html/driver-dashboard/dashboard/mydocument.php on line 455
+[06-Apr-2021 12:09:41 Africa/Johannesburg] PHP Warning:  Use of undefined constant php - assumed 'php' (this will throw an Error in a future version of PHP) in /home/nextnowa/public_html/driver-dashboard/dashboard/mydocument.php on line 455
+[06-Apr-2021 12:11:15 Africa/Johannesburg] PHP Warning:  Use of undefined constant php - assumed 'php' (this will throw an Error in a future version of PHP) in /home/nextnowa/public_html/driver-dashboard/dashboard/mydocument.php on line 455
+[06-Apr-2021 12:11:26 Africa/Johannesburg] PHP Warning:  Use of undefined constant php - assumed 'php' (this will throw an Error in a future version of PHP) in /home/nextnowa/public_html/driver-dashboard/dashboard/mydocument.php on line 455
+[06-Apr-2021 12:19:05 Africa/Johannesburg] PHP Warning:  Use of undefined constant php - assumed 'php' (this will throw an Error in a future version of PHP) in /home/nextnowa/public_html/driver-dashboard/dashboard/mydocument.php on line 455
+[06-Apr-2021 16:34:07 Africa/Johannesburg] PHP Notice:  Undefined index: uid in /home/nextnowa/public_html/driver-dashboard/dashboard/doc.php on line 4
