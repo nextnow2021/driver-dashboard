@@ -55,6 +55,7 @@ if(strlen($_SESSION['uid'])=="")
      
         </style>
   </head>
+  
   <body>
     <!-- navbar-->
     <header class="header">
