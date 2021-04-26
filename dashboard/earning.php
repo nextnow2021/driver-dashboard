@@ -199,7 +199,7 @@ if(strlen($_SESSION['uid'])=="")
                                   <th>Salary</th>
                               </tr>
                           </thead>
-                            <tbody>
+                            <!-- <tbody>
                                 <tr>
                                     <td>Tiger Nixon</td>
                                     <td>System Architect</td>
@@ -437,9 +437,10 @@ if(strlen($_SESSION['uid'])=="")
                                     <td>2011/01/25</td>
                                     <td>$112,000</td>
                                 </tr>
-                            </tbody>
+                            </tbody> -->
                             <tfoot>
                                 <tr>
+                                  
                                     <th>Name</th>
                                     <th>Position</th>
                                     <th>Office</th>
