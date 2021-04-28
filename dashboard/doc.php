@@ -1,5 +1,50 @@
 <?php
+
 session_start();
+// include('session.php');
+//require_once ("../login/connection.php" );
+if(isset($_POST["submit"]))
+{
+  $getImage=  basename($_FILES["photo"]["name"]);
+   // $getsubimg=  basename($_FILES["subimage_btn"]["name"]);
+    if($getImage==""){
+       echo "<script type='text/javascript'>alert('Please Choose Image!')</script>";
+    }
+  
+  
+      $target="photo_img/";
+        //$ran=time();
+        $target=$target.$getImage;
+        $photo=$getImage;
+// echo "$photo";
+        
+        if($_FILES["photo"]["type"] =="image/jpg"||$_FILES["photo"]["type"]=="image/jpeg" || $_FILES["photo"]["type"]=="image/png")
+        {
+            $move = move_uploaded_file($_FILES["photo"]["tmp_name"], $target);
+            if($move){
+                include_once 'action.php';
+              // $DocumentClass=new DocumentClass();
+               // echo $getsubImage;
+               //$DocumentClass->uploadfile($_SESSION['uid'],$photo,$_POST["name"],$_POST["contactno"],$_POST["email"],$_POST["address"],$_POST["state"]);
+              
+            }
+            else
+            {
+                echo "<script type='text/javascript'>alert('File Not Uploded.!')</script>";
+            }
+        }
+        else
+        {
+           echo "<script type='text/javascript'>alert('Please Choose Image format in JPEG,Gif,PNG!')</script>";
+        }
+  
+  
+}
+
+
+?>
+<?php
+//session_start();
 
 if(strlen($_SESSION['uid'])=="")
 {
@@ -171,6 +216,11 @@ if(strlen($_SESSION['uid'])=="")
               </div>
               
             </div>
+            <div class="float-right">
+                <button type="button" class="btn btn-outline-primary btn-circle float-right " data-toggle="modal" data-target="#largeModal" aria-haspopup="true" aria-expanded="true">
+                    Add Document
+                </button>
+          </div>
           </section>
           <section>
            
@@ -216,10 +266,15 @@ if(strlen($_SESSION['uid'])=="")
                                      <form-group>
                                             <div class="form-inline">
                                               </div>
-                                                <label for="file-input-dd7b2" id="ember259" class="float-right file-upload ember-view">
+                                                <label for="file-input-dd7b2" id="ember259" class="float-left file-upload ember-view">
                                                   <input id="file-input-dd7b2" hidden="" type="file">    
-                                                  <span type="button" class="btn btn-primary btn-lg oi oi-plus">Upload fiel</span>
-                                                </label>         
+                                                  <span type="button" class="btn btn-primary btn-lg oi oi-plus">Upload file</span>
+                                                </label>   
+                                                <div class="form-inline">
+                                              </div>
+                                                <!-- <label for="file-input-dd7b2" id="ember259" class="float-right  ember-view">
+                                                <button type="submit" name="submit" class="btn btn-primary">Submit</button> 
+                                                </label> -->       
                                       </form-group>
                                   </form>
                                 </div>
@@ -267,7 +322,7 @@ if(strlen($_SESSION['uid'])=="")
                                               </div>
                                                 <label for="file-input-dd7b2" id="ember259" class="float-right file-upload ember-view">
                                                   <input id="file-input-dd7b2" hidden="" type="file">    
-                                                  <span type="button" class="btn btn-primary btn-lg oi oi-plus">Upload fiel</span>
+                                                  <span type="button" class="btn btn-primary btn-lg oi oi-plus">Upload file</span>
                                                 </label>         
                                       </form-group>
                                   </form>
@@ -319,7 +374,7 @@ if(strlen($_SESSION['uid'])=="")
                                               </div>
                                                 <label for="file-input-dd7b2" id="ember259" class="float-right file-upload ember-view">
                                                   <input id="file-input-dd7b2" hidden="" type="file">    
-                                                  <span type="button" class="btn btn-primary btn-lg oi oi-plus">Upload fiel</span>
+                                                  <span type="button" class="btn btn-primary btn-lg oi oi-plus">Upload file</span>
                                                 </label>         
                                       </form-group>
                                   </form>
@@ -367,7 +422,7 @@ if(strlen($_SESSION['uid'])=="")
                                               </div>
                                                 <label for="file-input-dd7b2" id="ember259" class="float-right file-upload ember-view">
                                                   <input id="file-input-dd7b2" hidden="" type="file">    
-                                                  <span type="button" class="btn btn-primary btn-lg oi oi-plus">Upload fiel</span>
+                                                  <span type="button" class="btn btn-primary btn-lg oi oi-plus">Upload file</span>
                                                 </label>         
                                       </form-group>
                                   </form>
@@ -419,7 +474,7 @@ if(strlen($_SESSION['uid'])=="")
                                               </div>
                                                 <label for="file-input-dd7b2" id="ember259" class="float-right file-upload ember-view">
                                                   <input id="file-input-dd7b2" hidden="" type="file">    
-                                                  <span type="button" class="btn btn-primary btn-lg oi oi-plus">Upload fiel</span>
+                                                  <span type="button" class="btn btn-primary btn-lg oi oi-plus">Upload file</span>
                                                 </label>         
                                       </form-group>
                                   </form>
@@ -467,7 +522,7 @@ if(strlen($_SESSION['uid'])=="")
                                               </div>
                                                 <label for="file-input-dd7b2" id="ember259" class="float-right file-upload ember-view">
                                                   <input id="file-input-dd7b2" hidden="" type="file">    
-                                                  <span type="button" class="btn btn-primary btn-lg oi oi-plus">Upload fiel</span>
+                                                  <span type="button" class="btn btn-primary btn-lg oi oi-plus">Upload file</span>
                                                 </label>         
                                       </form-group>
                                   </form>
@@ -520,7 +575,7 @@ if(strlen($_SESSION['uid'])=="")
                                               </div>
                                                 <label for="file-input-dd7b2" id="ember259" class="float-right file-upload ember-view">
                                                   <input id="file-input-dd7b2" hidden="" type="file">    
-                                                  <span type="button" class="btn btn-primary btn-lg oi oi-plus">Upload fiel</span>
+                                                  <span type="button" class="btn btn-primary btn-lg oi oi-plus">Upload file</span>
                                                 </label>         
                                       </form-group>
                                   </form>
@@ -569,7 +624,7 @@ if(strlen($_SESSION['uid'])=="")
                                               </div>
                                                 <label for="file-input-dd7b2" id="ember259" class="float-right file-upload ember-view">
                                                   <input id="file-input-dd7b2" hidden="" type="file">    
-                                                  <span type="button" class="btn btn-primary btn-lg oi oi-plus">Upload fiel</span>
+                                                  <span type="button" class="btn btn-primary btn-lg oi oi-plus">Upload file</span>
                                                 </label>         
                                       </form-group>
                                   </form>
@@ -1214,6 +1269,97 @@ if(strlen($_SESSION['uid'])=="")
         </footer>
       </div>
     </div>
+    <!-- ######### Modal Form ############ -->
+            <div class="modal fade" id="largeModal" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
+              <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h4 class="modal-title" id="myModalLabel">Add Document</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                    <!-- content goes here -->
+                        <form action="<?php echo($_SERVER['PHP_SELF']);?>" method="POST" enctype="multipart/form-data">
+                          <div class="form-group">
+                             <label for="name" class="h6 text-uppercase mb-0">DRIVER ID DOCUMENT/PASSPORT</label>
+                            <input type="file" class="form-control" name="driver_id_document"  placeholder="Choose File" required >
+                            
+                          </div>
+                          <div class="form-group">
+                             <label for="name" class="h6 text-uppercase mb-0">DRIVER'S LICENSE (PRDP)</label>
+                            <input type="file" class="form-control" name="driver_license"  placeholder="Choose File" required >
+                            
+                          </div>
+                          <div class="form-group">
+                             <label for="name" class="h6 text-uppercase mb-0">DRIVER PHOTO</label>
+                            <input type="file" class="form-control" name="driver_photo"  placeholder="Choose File" required >
+                            
+                          </div>
+                          <div class="form-group">
+                             <label for="name" class="h6 text-uppercase mb-0">MOTOR VEHICLE LICENSE DISC WITH OPERATOR CARD</label>
+                            <input type="file" class="form-control" name="vehicle_license"  placeholder="Choose File" required >
+                            
+                          </div>
+                         <div class="form-group">
+                             <label for="name" class="h6 text-uppercase mb-0">CERTIFICATE OF REGISTRATION FOR YOUR CAR</label>
+                            <input type="file" class="form-control" name="registration_certificate"  placeholder="Choose File" required >
+                            
+                          </div>
+                          <div class="form-group">
+                             <label for="name" class="h6 text-uppercase mb-0">VEHICLE INSPECTION REPORT</label>
+                            <input type="file" class="form-control" name="vehicle_inspection"  placeholder="Choose File" required >
+                            
+                          </div>
+                          <div class="form-group">
+                             <label for="name" class="h6 text-uppercase mb-0">SIGNED EME AFFIDAVIT</label>
+                            <input type="file" class="form-control" name="signed_eme_affidavit"  placeholder="Choose File" required >
+                            
+                          </div>
+                          <!-- <div class="form-group">
+                            <label for="locality">Locality</label>
+                            <input type="text" class="form-control" name="locality"  placeholder="Enter Locality">
+                          </div>
+                          <div class="form-group">
+                            <label for="city">City</label>
+                            <input type="text" class="form-control" name="city" placeholder="Enter City">
+                          </div>
+                           <div class="form-group">
+                            <label for="district">District</label>
+                            <input type="text" class="form-control" name="district"  placeholder="Enter District">
+                          </div> -->
+                          <div class="form-group">
+                             <label for="name " class="h6 text-uppercase mb-0">OPERATING LICENSE</label>
+                            <input type="file" class="form-control" name="operating_license"  placeholder="Choose File" required >
+                            
+                          </div>
+                         
+                          <!-- <div class="form-group">
+                            <label for="exampleInputPassword1">Password</label>
+                            <input type="password" class="form-control" name="jccpassword" id="exampleInputPassword1"  placeholder="Password">
+                          </div> -->
+                         
+                          <!-- <div class="form-group">
+                            <label for="exampleInputFile">File input</label>
+                            <input type="file" id="exampleInputFile">
+                            <p class="help-block">Example block-level help text here.</p>
+                          </div> -->
+                          <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            <button type="submit" name="submit" class="btn btn-primary">Submit</button>
+                          </div>
+                          
+                        </form>
+                  </div>
+                  
+                </div>
+              </div>
+            </div>
+
+
+    <!-- ######### //Modal Form ########## -->
+
     <!-- JavaScript files-->
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/popper.js/umd/popper.min.js"> </script>
