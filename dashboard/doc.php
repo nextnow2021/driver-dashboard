@@ -3,29 +3,82 @@
 session_start();
 // include('session.php');
 //require_once ("../login/connection.php" );
-if(isset($_POST["submit"]))
+// if(isset($_POST["submit"]))
+// {
+//   $getImage=  basename($_FILES["photo"]["name"]);
+//    // $getsubimg=  basename($_FILES["subimage_btn"]["name"]);
+//     if($getImage==""){
+//        echo "<script type='text/javascript'>alert('Please Choose Image!')</script>";
+//     }
+  
+  
+//       $target="photo_img/";
+//         //$ran=time();
+//         $target=$target.$getImage;
+//         $photo=$getImage;
+// // echo "$photo";
+        
+//         if($_FILES["photo"]["type"] =="image/jpg"||$_FILES["photo"]["type"]=="image/jpeg" || $_FILES["photo"]["type"]=="image/png")
+//         {
+//             $move = move_uploaded_file($_FILES["photo"]["tmp_name"], $target);
+//             if($move){
+//                 include_once 'action.php';
+//               // $DocumentClass=new DocumentClass();
+//                // echo $getsubImage;
+//                //$DocumentClass->uploadfile($_SESSION['uid'],$photo,$_POST["name"],$_POST["contactno"],$_POST["email"],$_POST["address"],$_POST["state"]);
+              
+//             }
+//             else
+//             {
+//                 echo "<script type='text/javascript'>alert('File Not Uploded.!')</script>";
+//             }
+//         }
+//         else
+//         {
+//            echo "<script type='text/javascript'>alert('Please Choose Image format in JPEG,Gif,PNG!')</script>";
+//         }
+  
+  
+// }
+
+if (isset($_POST["submit"])) 
 {
-  $getImage=  basename($_FILES["photo"]["name"]);
-   // $getsubimg=  basename($_FILES["subimage_btn"]["name"]);
-    if($getImage==""){
+  include 'driver_license_action.php';
+  include 'driver_photo_action.php';
+  include 'vehicle_license_action.php';
+  include 'registration_certificate_action.php';
+  include 'vehicle_inspection_action.php';
+  include 'signed_eme_affidavit_action.php';
+  include 'operating_license_action.php';
+  
+   $getDImage=  basename($_FILES["driver_id_document"]["name"]);
+  // $getLImage=  basename($_FILES["licencephoto"]["name"]);
+    if($getDImage ==""){
        echo "<script type='text/javascript'>alert('Please Choose Image!')</script>";
     }
   
   
       $target="photo_img/";
-        //$ran=time();
-        $target=$target.$getImage;
-        $photo=$getImage;
-// echo "$photo";
         
-        if($_FILES["photo"]["type"] =="image/jpg"||$_FILES["photo"]["type"]=="image/jpeg" || $_FILES["photo"]["type"]=="image/png")
+        $target=$target.$getDImage;
+        $DIphoto=$getDImage;
+      // echo "$Cphoto";
+
+       // $LImage = $getLImage;
+       // echo "$LImage";
+
+        if( $_FILES["driver_id_document"]["type"] =="image/jpg" || $_FILES["driver_id_document"]["type"]=="image/jpeg" || $_FILES["driver_id_document"]["type"]=="image/png")
         {
-            $move = move_uploaded_file($_FILES["photo"]["tmp_name"], $target);
+            
+            $move = move_uploaded_file( $_FILES["driver_id_document"]["tmp_name"], $target);
             if($move){
                 include_once 'action.php';
-              // $DocumentClass=new DocumentClass();
-               // echo $getsubImage;
-               //$DocumentClass->uploadfile($_SESSION['uid'],$photo,$_POST["name"],$_POST["contactno"],$_POST["email"],$_POST["address"],$_POST["state"]);
+                
+               $DocSummaryClass=new DocSummaryClass();
+               
+               $DocSummaryClass->docuploadfile($_SESSION['uid'],$DIphoto,
+                $DLImage,$DPImage,$VLImage,$RCImage,$VIImage,
+                $SEAImage,$OLImage);
               
             }
             else
@@ -38,9 +91,7 @@ if(isset($_POST["submit"]))
            echo "<script type='text/javascript'>alert('Please Choose Image format in JPEG,Gif,PNG!')</script>";
         }
   
-  
 }
-
 
 ?>
 <?php
@@ -229,7 +280,17 @@ if(strlen($_SESSION['uid'])=="")
                   <p>Here are documents associated with your driver profile.</p>
                 </div>
       -->
-        
+
+          <?php
+
+                include_once('action.php');
+                //$sql=$fetchdata->fetchdata();
+                $DocSummaryClass= new DocSummaryClass();
+                $sql=$DocSummaryClass->listdocsummary();
+                //$cnt=1;
+                while($row=mysqli_fetch_array($sql))
+                {
+          ?>        
             <div class="row mb-4">
               <div class="col-lg-7 mb-4 mb-lg-0">
                 <div class="card">
@@ -252,10 +313,12 @@ if(strlen($_SESSION['uid'])=="")
                             <div class="col-xs-12">
                                     <p>
                                       <a href="" role="button" data-ember-action="" data-ember-action-263="263">
-                                        <span class="icon icon-text-document"></span> jDkUO2lvCsSTcC8liXOME4LF.jpg
+                                        <span class="icon icon-text-document"></span> 
+                                        <?php echo $row
+                                        ['driver_id_document']; ?>  
                                       </a>
                                     </p>
-                                <p>Uploaded: 10/16/2020</p>
+                                <p>Uploaded: <?php echo $row['uploaded_date'];?></p>
                             </div>
                           </div>
                           <hr>
@@ -306,10 +369,13 @@ if(strlen($_SESSION['uid'])=="")
                             <div class="col-xs-12">
                                     <p>
                                       <a href="" role="button" data-ember-action="" data-ember-action-263="263">
-                                        <span class="icon icon-text-document"></span> jDkUO2lvCsSTcC8liXOME4LF.jpg
+                                        <span class="icon icon-text-document"></span>
+                                         <?php echo $row
+                                        ['driver_license']; ?>
                                       </a>
                                     </p>
-                                <p>Uploaded: 10/16/2020</p>
+                                <p>Uploaded: <?php echo $row
+                                        ['uploaded_date']; ?></p>
                             </div>
                           </div>
                           <hr>
@@ -358,10 +424,13 @@ if(strlen($_SESSION['uid'])=="")
                             <div class="col-xs-12">
                                     <p>
                                       <a href="" role="button" data-ember-action="" data-ember-action-263="263">
-                                        <span class="icon icon-text-document"></span> jDkUO2lvCsSTcC8liXOME4LF.jpg
+                                        <span class="icon icon-text-document"></span> 
+                                        <?php echo $row
+                                        ['driver_photo']; ?>
                                       </a>
                                     </p>
-                                <p>Uploaded: 10/16/2020</p>
+                                <p>Uploaded: <?php echo $row
+                                        ['uploaded_date']; ?></p>
                             </div>
                           </div><br>
                           <hr>
@@ -406,10 +475,13 @@ if(strlen($_SESSION['uid'])=="")
                             <div class="col-xs-12">
                                     <p>
                                       <a href="" role="button" data-ember-action="" data-ember-action-263="263">
-                                        <span class="icon icon-text-document"></span> jDkUO2lvCsSTcC8liXOME4LF.jpg
+                                        <span class="icon icon-text-document"></span>
+                                         <?php echo $row
+                                        ['vehicle_license']; ?>
                                       </a>
                                     </p>
-                                <p>Uploaded: 10/16/2020</p>
+                                <p>Uploaded: <?php echo $row
+                                        ['uploaded_date']; ?></p>
                             </div>
                           </div>
                           <hr>
@@ -458,10 +530,13 @@ if(strlen($_SESSION['uid'])=="")
                             <div class="col-xs-12">
                                     <p>
                                       <a href="" role="button" data-ember-action="" data-ember-action-263="263">
-                                        <span class="icon icon-text-document"></span> jDkUO2lvCsSTcC8liXOME4LF.jpg
+                                        <span class="icon icon-text-document"></span> 
+                                        <?php echo $row
+                                        ['registration_certificate']; ?>
                                       </a>
                                     </p>
-                                <p>Uploaded: 10/16/2020</p>
+                                <p>Uploaded: <?php echo $row
+                                        ['uploaded_date']; ?></p>
                             </div>
                           </div>
                           <hr>
@@ -506,10 +581,13 @@ if(strlen($_SESSION['uid'])=="")
                             <div class="col-xs-12">
                                     <p>
                                       <a href="" role="button" data-ember-action="" data-ember-action-263="263">
-                                        <span class="icon icon-text-document"></span> jDkUO2lvCsSTcC8liXOME4LF.jpg
+                                        <span class="icon icon-text-document"></span> 
+                                        <?php echo $row
+                                        ['vehicle_inspection']; ?>
                                       </a>
                                     </p>
-                                <p>Uploaded: 10/16/2020</p>
+                                <p>Uploaded: <?php echo $row
+                                        ['uploaded_date']; ?></p>
                             </div>
                           </div>
                           <hr>
@@ -559,10 +637,13 @@ if(strlen($_SESSION['uid'])=="")
                             <div class="col-xs-12">
                                     <p>
                                       <a href="" role="button" data-ember-action="" data-ember-action-263="263">
-                                        <span class="icon icon-text-document"></span> jDkUO2lvCsSTcC8liXOME4LF.jpg
+                                        <span class="icon icon-text-document"></span> 
+                                        <?php echo $row
+                                        ['signed_eme_affidavit']; ?>
                                       </a>
                                     </p>
-                                <p>Uploaded: 10/16/2020</p>
+                                <p>Uploaded:<?php echo $row
+                                        ['uploaded_date']; ?></p>
                             </div>
                           </div>
                           <hr>
@@ -607,11 +688,14 @@ if(strlen($_SESSION['uid'])=="")
                             <div class="col-xs-12">
                                     <p>
                                       <a href="" role="button" data-ember-action="" data-ember-action-263="263">
-                                        <span class="icon icon-text-document"></span> jDkUO2lvCsSTcC8liXOME4LF.jpg
+                                        <span class="icon icon-text-document"></span> 
+                                        <?php echo $row
+                                        ['operating_license']; ?>
                                       </a>
                                     </p>
                                     <br>
-                                <p>Uploaded: 10/16/2020</p>
+                                <p>Uploaded: <?php echo $row
+                                        ['uploaded_date']; ?></p>
                             </div>
                           </div><br><br><br>
                           <hr>
@@ -634,7 +718,9 @@ if(strlen($_SESSION['uid'])=="")
                     </div>  <!--  //card-body -->
                   </div> <!--  //card -->
               </div>
+
             </div>
+            <?php  } ?> <!-- $cnt=$cnt+1; -->
 
 
             <!-- //panel-4 -->
