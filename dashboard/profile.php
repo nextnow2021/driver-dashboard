@@ -160,6 +160,7 @@ if(strlen($_SESSION['uid'])=="")
                     </div>
                   </div>
                   <div class="icon text-white bg-violet"><i class="fas fa-server"></i></div>
+
                 </div>
               </div>
               <!-- <div class="col-xl-3 col-lg-3 mb-4 mb-xl-0">
@@ -196,6 +197,11 @@ if(strlen($_SESSION['uid'])=="")
                 </div>
               </div> -->
             </div>
+            <div class="float-right">
+                <button type="button" class="btn btn-outline-primary btn-circle float-right " data-toggle="modal" data-target="#largeModal" aria-haspopup="true" aria-expanded="true">
+                    Add Profile
+                </button>
+          </div>
           </section>
           <section>
             <div class="col-md-12 col-sm-8 content">
@@ -284,7 +290,7 @@ if(strlen($_SESSION['uid'])=="")
                       <div id="ember197" class="ember-view"> 
                         <div class="form-group">
                             <label for="driver_licence_number" class="control-label">
-                              UK Driving Licence Number
+                               Driving Licence Number
                             </label>
                           <input placeholder="" disabled="" id="ember198" class="form-control ember-text-field ember-view" type="text">
                           <div id="ember199" class="ember-view"><!----></div>
@@ -298,7 +304,7 @@ if(strlen($_SESSION['uid'])=="")
                       <div id="ember200" class="ember-view"> 
                         <div class="form-group">
                             <label for="driver_licence_expires" class="control-label">
-                              Uk Driver Licence Expiry Date
+                               Driver Licence Expiry Date
                             </label>
                             <input placeholder="" disabled="" id="ember201" class="form-control ember-text-field ember-view" type="text">
                             <div id="ember202" class="ember-view"><!----></div>
@@ -886,6 +892,96 @@ if(strlen($_SESSION['uid'])=="")
         </footer>
       </div>
     </div>
+    <!-- ######### Modal Form ############ -->
+            <div class="modal fade" id="largeModal" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
+              <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h4 class="modal-title" id="myModalLabel">Add Profile</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+        <!-- content goes here -->
+            <form action="<?php echo($_SERVER['PHP_SELF']);?>" method="POST" enctype="multipart/form-data">
+              <div class="form-group">
+                 <h5>Display Image</h5>
+                 <label for="name ">Choose Profile Image</label>
+                <input type="file" class="form-control" name="photo"  placeholder="Choose File" required >
+                
+              </div>
+
+              <hr>
+              <h5>Profile</h5>
+              <div class="form-group">
+                <label for="name ">Email Address</label>
+                <input type="text" class="form-control" name="email"  placeholder="Enter Email Address" required >
+              </div>
+              <div class="form-group">
+                <label for="phone">Phone No.</label>
+                <input type="text" class="form-control "  name="contactno"  placeholder="Enter Contact No." required >
+              </div>
+             <!--  <div class="form-group">
+                <label for="exampleInputEmail1">Email id</label>
+                <input type="email" class="form-control" name="email"  placeholder="Enter email" required>
+              </div> -->
+              <hr>
+              <h5>Driver Document</h5>
+              <div class="form-group">
+                <label for="address">Driving Licence Number</label>
+                <input type="text" class="form-control" name="driver_licence_number"  placeholder="Enter Driving Licence Number" required=>
+              </div>
+              <div class="form-group">
+                <label for="pincode">Driver Licence Expiry Date</label>
+                <input type="tel" class="form-control" name="driver_licence_expire_date"  placeholder="Enter Driver Licence Expiry Date">
+              </div>
+              <hr>
+              <h5>Driver vehicle</h5>
+               <div class="form-group">
+                <label for="locality">Model</label>
+                <input type="text" class="form-control" name="model"  placeholder="Enter Model">
+              </div>
+              <div class="form-group">
+                <label for="city">Year</label>
+                <input type="text" class="form-control" name="year" placeholder="Enter Year">
+              </div>
+               <div class="form-group">
+                <label for="district">Number plate</label>
+                <input type="text" class="form-control" name="number_plate"  placeholder="Enter number plate">
+              </div> 
+              <div class="form-group">
+                <label for="state">Seats</label>
+                <input type="text" class="form-control" name="seats" placeholder="Enter seats" required>
+              </div>
+             
+              <!-- <div class="form-group">
+                <label for="exampleInputPassword1">Password</label>
+                <input type="password" class="form-control" name="jccpassword" id="exampleInputPassword1"  placeholder="Password">
+              </div> -->
+             
+              <!-- <div class="form-group">
+                <label for="exampleInputFile">File input</label>
+                <input type="file" id="exampleInputFile">
+                <p class="help-block">Example block-level help text here.</p>
+              </div> -->
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="submit" name="submit" class="btn btn-primary">Submit</button>
+              </div>
+              
+            </form>
+      </div>
+                  
+                </div>
+              </div>
+            </div>
+
+
+    <!-- ######### //Modal Form ########## -->
+
+
+
     <!-- JavaScript files-->
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/popper.js/umd/popper.min.js"> </script>
