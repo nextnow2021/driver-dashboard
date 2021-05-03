@@ -1,3 +1,4 @@
+<!-- 7350fc -->
 <?php
 
 session_start();
@@ -10,7 +11,7 @@ session_start();
 //     if($getImage==""){
 //        echo "<script type='text/javascript'>alert('Please Choose Image!')</script>";
 //     }
-  
+  // 
   
 //       $target="photo_img/";
 //         //$ran=time();
@@ -227,6 +228,8 @@ if(strlen($_SESSION['uid'])=="")
               <li class="sidebar-list-item"><a href="earning.php" class="sidebar-link text-muted">
                 <img src="img/Png/Rand_Money.png" class="img-responsive mr-3"><span>Earning</span></a></li>
               <!-- <li class="sidebar-list-item"><a href="myexperience.html" class="sidebar-link text-muted"><i class="o-survey-1 mr-3 text-gray"></i><span>My Experience</span></a></li> -->
+              <li class="sidebar-list-item"><a href="doc.php" class="sidebar-link text-muted">
+                <img src="img/Png/Rand_Money.png" class="img-responsive mr-3"><span>doc</span></a></li>
               <li class="sidebar-list-item"><a href="support.php" class="sidebar-link text-muted">
                 <img src="img/Png/support.png" class="img-responsive mr-3"><span>Support</span></a></li>
           <!-- <li class="sidebar-list-item"><a href="#" data-toggle="collapse" data-target="#pages" aria-expanded="false" aria-controls="pages" class="sidebar-link text-muted"><i class="o-wireframe-1 mr-3 text-gray"></i><span>Pages</span></a>
@@ -239,6 +242,9 @@ if(strlen($_SESSION['uid'])=="")
               </ul>
             </div>
           </li> -->
+
+
+          
               <li class="sidebar-list-item"><a href="mydocument.php" class="sidebar-link text-muted">
                 <img src="img/Png/document.png" class="img-responsive mr-3"><span>My Document</span></a></li>
         </ul>
