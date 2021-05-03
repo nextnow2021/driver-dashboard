@@ -137,6 +137,8 @@ if(strlen($_SESSION['uid'])=="")
           </li> -->
               <li class="sidebar-list-item"><a href="mydocument.php" class="sidebar-link text-muted">
                 <img src="img/Png/document.png" class="img-responsive mr-3"><span>My Document</span></a></li>
+                <li class="sidebar-list-item"><a href="doc.php" class="sidebar-link text-muted">
+                <img src="img/Png/document.png" class="img-responsive mr-3"><span>My Doc</span></a></li>
         </ul>
         <!-- <div class="text-gray-400 text-uppercase px-3 px-lg-4 py-4 font-weight-bold small headings-font-family">EXTRAS</div>
         <ul class="sidebar-menu list-unstyled">

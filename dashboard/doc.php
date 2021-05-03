@@ -312,10 +312,11 @@ if(strlen($_SESSION['uid'])=="")
                           <div id="ember262" class="row ember-view">
                             <div class="col-xs-12">
                                     <p>
-                                      <a href="" role="button" data-ember-action="" data-ember-action-263="263">
+                                      <a href="img scr=photo_img/<?php echo $row
+                                        ['driver_id_document']; ?> "" target='_self' >
                                         <span class="icon icon-text-document"></span> 
-                                        <?php echo $row
-                                        ['driver_id_document']; ?>  
+                                       
+                                        <img  class="img-trigger" src="photo_img/<?php echo $row['driver_id_document'];?>" width=100 height=100 data-zoom-image="photo_img/<?php echo $row['photo'];?>" id="zoom">  
                                       </a>
                                     </p>
                                 <p>Uploaded: <?php echo $row['uploaded_date'];?></p>
