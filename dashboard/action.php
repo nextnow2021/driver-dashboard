@@ -150,4 +150,93 @@ class DocSummaryClass extends connectionClass{
 
 }
 
+class ProfileSummary extends connectionClass
+{
+    
+    public function profileuploadfile($login_id,$profile_image,$email,$contactno,$driving_licence_number,$driver_licence_expiry_date,$driver_vehicle_model,$driver_vehicle_year,$driver_vehicle_numberplate,$driver_vehicle_seats){
+        $sql = mysqli_query($this->con,"INSERT INTO profile_summary(login_id,profile_image, email, contactno, driving_licence_number,driver_licence_expiry_date ,driver_vehicle_model, driver_vehicle_year,driver_vehicle_numberplate,driver_vehicle_seats) 
+        VALUES ('$login_id','$profile_image','$email','$contactno','$driving_licence_number','$driver_licence_expiry_date','$driver_vehicle_model','$driver_vehicle_year,'$driver_vehicle_numberplate','$driver_vehicle_seats')") ;
+           
+
+           //print_r($sql);
+
+        // $sql = "INSERT INTO vehicle_document('carphoto', 'vname', 'vcontactno', 'vemail', 'licencephoto', 'vaddress', 'vstate') 
+        // VALUES ('$carphoto','$vname','$vcontactno','$vemail','$licencephoto','$vaddress','$vstate')";
+
+
+
+    // $insert="Insert into driver_document (subject_id,slidername,video_btn,subimage_btn) values ('$subject_id','$slidername','$video_btn','$subimage_btn')";
+
+        //$vresult = mysqli_query($this->con,$sql);
+        if ($sql) {
+            echo "<script type='text/javascript'>alert('Profile Summary Data  is uploaded')</script>";
+            // echo("<meta http-equiv='refresh' content='0'>"); //Refresh by HTTP 'meta'
+        }
+        else {
+            echo "<script type='text/javascript'>alert('Data  is not been uploaded')</script>"; 
+        }
+    }
+
+
+    public function listprofilesummary()
+    {
+
+        $login_id = $_SESSION["uid"];
+         $sql = "SELECT profile_summary.profile_id,profile_summary.uploaded_date, profile_summary.email, profile_summary.contactno, profile_summary.driving_licence_number,profile_summary.driver_licence_expiry_date,profile_summary.driver_vehicle_model,profile_summary.driver_vehicle_year,profile_summary.driver_vehicle_numberplate,profile_summary.driver_vehicle_seats,login.FullName FROM profile_summary,login WHERE login.login_id=$login_id";
+        echo "$sql";
+        $res = mysqli_query($this->con,$sql);
+        return $res;
+
+    //    $result=mysqli_query($this->con,'SELECT carphoto,vname,vcontactno,vemail,licencephoto,vaddress,vstate FROM `vehicle_document`JOIN login WHERE vehicle_document.login_id = login.login_id');
+    // return $result;
+    }
+
+
+}
+
+class BillingClass extends connectionClass
+{
+    
+    public function billuploadfile($login_id,$carphoto,$vname,$vcontactno,$vemail,$licencephoto,$vaddress,$vstate){
+        $sql = mysqli_query($this->con,"INSERT INTO vehicle_document(login_id,carphoto, vname, vcontactno, vemail,licencephoto ,vaddress, vstate) 
+        VALUES ('$login_id','$carphoto','$vname','$vcontactno','$vemail','$licencephoto','$vaddress','$vstate')") ;
+           
+
+           //print_r($sql);
+
+        // $sql = "INSERT INTO vehicle_document('carphoto', 'vname', 'vcontactno', 'vemail', 'licencephoto', 'vaddress', 'vstate') 
+        // VALUES ('$carphoto','$vname','$vcontactno','$vemail','$licencephoto','$vaddress','$vstate')";
+
+
+
+    // $insert="Insert into driver_document (subject_id,slidername,video_btn,subimage_btn) values ('$subject_id','$slidername','$video_btn','$subimage_btn')";
+
+        //$vresult = mysqli_query($this->con,$sql);
+        if ($sql) {
+            echo "<script type='text/javascript'>alert('Vehicle Data  is uploaded')</script>";
+             echo("<meta http-equiv='refresh' content='0'>"); //Refresh by HTTP 'meta'
+        }
+        else {
+            echo "<script type='text/javascript'>alert('Data  is not been uploaded')</script>"; 
+        }
+    }
+
+
+    public function listvehicle()
+    {
+
+        $login_id = $_SESSION["uid"];
+         $sql = "SELECT *  FROM `vehicle_document` where login_id=$login_id";
+        echo "$sql";
+        $res = mysqli_query($this->con,$sql);
+        return $res;
+
+    //    $result=mysqli_query($this->con,'SELECT carphoto,vname,vcontactno,vemail,licencephoto,vaddress,vstate FROM `vehicle_document`JOIN login WHERE vehicle_document.login_id = login.login_id');
+    // return $result;
+    }
+
+
+}
+
+
 ?>

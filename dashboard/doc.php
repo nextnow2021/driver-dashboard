@@ -336,10 +336,10 @@ if(strlen($_SESSION['uid'])=="")
                                      <form-group>
                                             <div class="form-inline">
                                               </div>
-                                                <label for="file-input-dd7b2" id="ember259" class="float-left file-upload ember-view">
+                                                <!-- <label for="file-input-dd7b2" id="ember259" class="float-left file-upload ember-view">
                                                   <input id="file-input-dd7b2" hidden="" type="file">    
                                                   <span type="button" class="btn btn-primary btn-lg oi oi-plus">Upload file</span>
-                                                </label>   
+                                                </label>  -->  
                                                 <div class="form-inline">
                                               </div>
                                                 <!-- <label for="file-input-dd7b2" id="ember259" class="float-right  ember-view">
@@ -393,10 +393,10 @@ if(strlen($_SESSION['uid'])=="")
                                      <form-group>
                                             <div class="form-inline">
                                               </div>
-                                                <label for="file-input-dd7b2" id="ember259" class="float-right file-upload ember-view">
+                                                <!-- <label for="file-input-dd7b2" id="ember259" class="float-right file-upload ember-view">
                                                   <input id="file-input-dd7b2" hidden="" type="file">    
                                                   <span type="button" class="btn btn-primary btn-lg oi oi-plus">Upload file</span>
-                                                </label>         
+                                                </label>  -->        
                                       </form-group>
                                   </form>
                                 </div>
@@ -448,10 +448,10 @@ if(strlen($_SESSION['uid'])=="")
                                      <form-group>
                                             <div class="form-inline">
                                               </div>
-                                                <label for="file-input-dd7b2" id="ember259" class="float-right file-upload ember-view">
+                                               <!--  <label for="file-input-dd7b2" id="ember259" class="float-right file-upload ember-view">
                                                   <input id="file-input-dd7b2" hidden="" type="file">    
                                                   <span type="button" class="btn btn-primary btn-lg oi oi-plus">Upload file</span>
-                                                </label>         
+                                                </label>  -->        
                                       </form-group>
                                   </form>
                                 </div>
@@ -499,10 +499,10 @@ if(strlen($_SESSION['uid'])=="")
                                      <form-group>
                                             <div class="form-inline">
                                               </div>
-                                                <label for="file-input-dd7b2" id="ember259" class="float-right file-upload ember-view">
+                                               <!--  <label for="file-input-dd7b2" id="ember259" class="float-right file-upload ember-view">
                                                   <input id="file-input-dd7b2" hidden="" type="file">    
                                                   <span type="button" class="btn btn-primary btn-lg oi oi-plus">Upload file</span>
-                                                </label>         
+                                                </label>  -->        
                                       </form-group>
                                   </form>
                                 </div>
@@ -554,10 +554,10 @@ if(strlen($_SESSION['uid'])=="")
                                      <form-group>
                                             <div class="form-inline">
                                               </div>
-                                                <label for="file-input-dd7b2" id="ember259" class="float-right file-upload ember-view">
+                                               <!--  <label for="file-input-dd7b2" id="ember259" class="float-right file-upload ember-view">
                                                   <input id="file-input-dd7b2" hidden="" type="file">    
                                                   <span type="button" class="btn btn-primary btn-lg oi oi-plus">Upload file</span>
-                                                </label>         
+                                                </label>   -->       
                                       </form-group>
                                   </form>
                                 </div>
@@ -605,10 +605,10 @@ if(strlen($_SESSION['uid'])=="")
                                      <form-group>
                                             <div class="form-inline">
                                               </div>
-                                                <label for="file-input-dd7b2" id="ember259" class="float-right file-upload ember-view">
+                                               <!--  <label for="file-input-dd7b2" id="ember259" class="float-right file-upload ember-view">
                                                   <input id="file-input-dd7b2" hidden="" type="file">    
                                                   <span type="button" class="btn btn-primary btn-lg oi oi-plus">Upload file</span>
-                                                </label>         
+                                                </label> -->         
                                       </form-group>
                                   </form>
                                 </div>
@@ -661,10 +661,10 @@ if(strlen($_SESSION['uid'])=="")
                                      <form-group>
                                             <div class="form-inline">
                                               </div>
-                                                <label for="file-input-dd7b2" id="ember259" class="float-right file-upload ember-view">
+                                                <!-- <label for="file-input-dd7b2" id="ember259" class="float-right file-upload ember-view">
                                                   <input id="file-input-dd7b2" hidden="" type="file">    
                                                   <span type="button" class="btn btn-primary btn-lg oi oi-plus">Upload file</span>
-                                                </label>         
+                                                </label>  -->        
                                       </form-group>
                                   </form>
                                 </div>
@@ -713,10 +713,10 @@ if(strlen($_SESSION['uid'])=="")
                                      <form-group>
                                             <div class="form-inline">
                                               </div>
-                                                <label for="file-input-dd7b2" id="ember259" class="float-right file-upload ember-view">
+                                               <!--  <label for="file-input-dd7b2" id="ember259" class="float-right file-upload ember-view">
                                                   <input id="file-input-dd7b2" hidden="" type="file">    
                                                   <span type="button" class="btn btn-primary btn-lg oi oi-plus">Upload file</span>
-                                                </label>         
+                                                </label>  -->        
                                       </form-group>
                                   </form>
                                 </div>

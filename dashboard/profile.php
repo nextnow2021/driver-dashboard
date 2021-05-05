@@ -1,6 +1,51 @@
 <?php
 session_start();
 
+if(isset($_POST["submit"]))
+{
+  $getProfileImage=  basename($_FILES["profile_image"]["name"]);
+   // $getsubimg=  basename($_FILES["subimage_btn"]["name"]);
+    if($getProfileImage==""){
+       echo "<script type='text/javascript'>alert('Please Choose Image!')</script>";
+    }
+  
+  
+      $target="photo_img/";
+        //$ran=time();
+        $target=$target.$getProfileImage;
+        $profile_image=$getProfileImage;
+// echo "$photo";
+        
+        if($_FILES["profile_image"]["type"] =="image/jpg"||$_FILES["profile_image"]["type"]=="image/jpeg" || $_FILES["profile_image"]["type"]=="image/png")
+        {
+            $move = move_uploaded_file($_FILES["profile_image"]["tmp_name"], $target);
+            if($move){
+                include_once 'action.php';
+               $ProfileSummary=new ProfileSummary();
+               // echo $getsubImage;
+               $ProfileSummary->profileuploadfile($_SESSION['uid'],$profile_image,$_POST["email"],$_POST["contactno"],$_POST["driving_licence_number"],$_POST["driver_licence_expiry_date"],$_POST["driver_vehicle_model"],$_POST["driver_vehicle_year"],$_POST["driver_vehicle_numberplate"],$_POST["driver_vehicle_seats"]);
+              
+            }
+            else
+            {
+                echo "<script type='text/javascript'>alert('File Not Uploded.!')</script>";
+            }
+        }
+        else
+        {
+           echo "<script type='text/javascript'>alert('Please Choose Image format in JPEG,Gif,PNG!')</script>";
+        }
+  
+  
+}
+
+
+
+
+
+?>
+<?php
+
 if(strlen($_SESSION['uid'])=="")
 {
   header('location:../login/login.php');
@@ -202,6 +247,14 @@ if(strlen($_SESSION['uid'])=="")
                     Add Profile
                 </button>
           </div>
+
+           <div class="float-right">
+                <button type="button" class="btn btn-outline-primary btn-circle float-right " data-toggle="modal" data-target="#BillingModal" aria-haspopup="true" aria-expanded="true">
+                    Add Billing Information
+                </button>
+          </div>
+
+
           </section>
           <section>
             <div class="col-md-12 col-sm-8 content">
@@ -215,10 +268,12 @@ if(strlen($_SESSION['uid'])=="")
                         <div class="col-sm-6">
                           <div id="" class="ember-view"> 
                            <div class="form-group">
+                           
                                 <label for="first_name" class="control-label">
                                   First name
                                 </label>
-                              <input placeholder="" disabled="" id="" class="form-control ember-text-field ember-view" type="text">
+                                
+                              <input placeholder="" disabled="" id="" class="form-control ember-text-field ember-view" type="text" >
                               <div id="ember184" class="ember-view"><!----></div>
                                 <small class="help-block">
                                   To update, please contact customer support support@nextnow.africa
@@ -908,7 +963,7 @@ if(strlen($_SESSION['uid'])=="")
               <div class="form-group">
                  <h5>Display Image</h5>
                  <label for="name ">Choose Profile Image</label>
-                <input type="file" class="form-control" name="photo"  placeholder="Choose File" required >
+                <input type="file" class="form-control" name="profile_image"  placeholder="Choose File" required >
                 
               </div>
 
@@ -930,30 +985,119 @@ if(strlen($_SESSION['uid'])=="")
               <h5>Driver Document</h5>
               <div class="form-group">
                 <label for="address">Driving Licence Number</label>
-                <input type="text" class="form-control" name="driver_licence_number"  placeholder="Enter Driving Licence Number" required=>
+                <input type="text" class="form-control" name="driving_licence_number"  placeholder="Enter Driving Licence Number" required=>
               </div>
               <div class="form-group">
                 <label for="pincode">Driver Licence Expiry Date</label>
-                <input type="tel" class="form-control" name="driver_licence_expire_date"  placeholder="Enter Driver Licence Expiry Date">
+                <input type="tel" class="form-control" name="driver_licence_expiry_date"  placeholder="Enter Driver Licence Expiry Date">
               </div>
               <hr>
               <h5>Driver vehicle</h5>
                <div class="form-group">
                 <label for="locality">Model</label>
-                <input type="text" class="form-control" name="model"  placeholder="Enter Model">
+                <input type="text" class="form-control" name="driver_vehicle_model"  placeholder="Enter Model">
               </div>
               <div class="form-group">
                 <label for="city">Year</label>
-                <input type="text" class="form-control" name="year" placeholder="Enter Year">
+                <input type="text" class="form-control" name="driver_vehicle_year" placeholder="Enter Year">
               </div>
                <div class="form-group">
                 <label for="district">Number plate</label>
-                <input type="text" class="form-control" name="number_plate"  placeholder="Enter number plate">
+                <input type="text" class="form-control" name="driver_vehicle_numberplate"  placeholder="Enter number plate">
               </div> 
               <div class="form-group">
                 <label for="state">Seats</label>
-                <input type="text" class="form-control" name="seats" placeholder="Enter seats" required>
+                <input type="text" class="form-control" name="driver_vehicle_seats" placeholder="Enter seats" required>
               </div>
+             
+              <!-- <div class="form-group">
+                <label for="exampleInputPassword1">Password</label>
+                <input type="password" class="form-control" name="jccpassword" id="exampleInputPassword1"  placeholder="Password">
+              </div> -->
+             
+              <!-- <div class="form-group">
+                <label for="exampleInputFile">File input</label>
+                <input type="file" id="exampleInputFile">
+                <p class="help-block">Example block-level help text here.</p>
+              </div> -->
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="submit" name="submit" class="btn btn-primary">Submit</button>
+              </div>
+              
+            </form>
+      </div>
+                  
+                </div>
+              </div>
+            </div>
+
+
+    <!-- ######### //Modal Form ########## -->
+
+
+    <!-- ######### Modal Form ############ -->
+            <div class="modal fade" id="BillingModal" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
+              <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h4 class="modal-title" id="myModalLabel">Add Billing Information</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+        <!-- content goes here -->
+            <form action="<?php echo($_SERVER['PHP_SELF']);?>" method="POST" enctype="multipart/form-data">
+              <div class="form-group">
+                 <!-- <h5>Billing Profile</h5> -->
+                 <!-- <label for="name ">Choose Profile Image</label>
+                <input type="file" class="form-control" name="profile_image"  placeholder="Choose File" required >
+                 -->
+              </div>
+
+              <!-- <hr>
+              <h5>Profile</h5> -->
+              <div class="form-group">
+                <label for="name ">Company Name</label>
+                <input type="text" class="form-control" name="company_name"  placeholder="Enter Comapny Name" required >
+              </div>
+              <div class="form-group">
+                <label for="phone">Company email</label>
+                <input type="text" class="form-control "  name="company_email"  placeholder="Enter Company Email." required >
+              </div>
+             <!--  <div class="form-group">
+                <label for="exampleInputEmail1">Email id</label>
+                <input type="email" class="form-control" name="email"  placeholder="Enter email" required>
+              </div> -->
+              <!-- <hr>
+              <h5>Driver Document</h5> -->
+              <div class="form-group">
+                <label for="address">Address</label>
+                <input type="text" class="form-control" name="address"  placeholder="Enter Address" required=>
+              </div>
+              <div class="form-group">
+                <label for="pincode">Business Registration Code</label>
+                <input type="tel" class="form-control" name="business_registration_code"  placeholder="Enter Business Registration Code">
+              </div>
+              <!-- <hr>
+              <h5>VAT no.</h5> -->
+               <div class="form-group">
+                <label for="locality">VAT no.</label>
+                <input type="text" class="form-control" name="vat_no"  placeholder="Enter Vat NO">
+              </div>
+              <!-- <div class="form-group">
+                <label for="city">Year</label>
+                <input type="text" class="form-control" name="driver_vehicle_year" placeholder="Enter Year">
+              </div>
+               <div class="form-group">
+                <label for="district">Number plate</label>
+                <input type="text" class="form-control" name="driver_vehicle_numberplate"  placeholder="Enter number plate">
+              </div> 
+              <div class="form-group">
+                <label for="state">Seats</label>
+                <input type="text" class="form-control" name="driver_vehicle_seats" placeholder="Enter seats" required>
+              </div> -->
              
               <!-- <div class="form-group">
                 <label for="exampleInputPassword1">Password</label>
