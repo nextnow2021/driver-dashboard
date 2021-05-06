@@ -38,12 +38,49 @@ if(isset($_POST["submit"]))
   
   
 }
+?>
 
-
-
+<?php
+if(isset($_POST["bsubmit"]))
+{
+  // $getProfileImage=  basename($_FILES["profile_image"]["name"]);
+  //  // $getsubimg=  basename($_FILES["subimage_btn"]["name"]);
+  //   if($getProfileImage==""){
+  //      echo "<script type='text/javascript'>alert('Please Choose Image!')</script>";
+  //   }
+  
+  
+      // $target="photo_img/";
+      //   //$ran=time();
+      //   $target=$target.$getProfileImage;
+      //   $profile_image=$getProfileImage;
+// echo "$photo";
+        
+        // if($_FILES["profile_image"]["type"] =="image/jpg"||$_FILES["profile_image"]["type"]=="image/jpeg" || $_FILES["profile_image"]["type"]=="image/png")
+        // {
+        //     $move = move_uploaded_file($_FILES["profile_image"]["tmp_name"], $target);
+        //     if($move){
+                include_once 'action.php';
+               $BillingClass=new BillingClass();
+               // echo $getsubImage;
+               $BillingClass->billuploadfile($_SESSION['uid'],$_POST["company_name"],$_POST["company_email"],$_POST["address"],$_POST["business_registration_code"],$_POST["vat_no"]);
+              
+            // }
+            // else
+            // {
+            //     echo "<script type='text/javascript'>alert('File Not Uploded.!')</script>";
+            // }
+        // }
+       
+  
+  
+}
+ 
 
 
 ?>
+
+
 <?php
 
 if(strlen($_SESSION['uid'])=="")
@@ -438,15 +475,25 @@ if(strlen($_SESSION['uid'])=="")
       <strong>Billing Information</strong>
     </h4>
     <p>This information appears on invoices sent to you.</p>
+          <?php
+                  
+                include_once('action.php');
+                //$sql=$fetchdata->fetchdata();
+                $BillingClass= new BillingClass();
+                $sql=$BillingClass->listbillsummary();
+                //$cnt=1;
+                $row = mysqli_fetch_array($sql);
+
+              ?>
                 <div class="row">
                     <div class="col-sm-6">
-                      <div id="ember215" class="ember-view"> 
+                      <div> 
                         <div class="form-group">
                             <label for="company_name" class="control-label">
                               Company Name
                             </label>
-                          <input placeholder="" disabled="" id="ember216" class="form-control ember-text-field ember-view" type="text">
-                          <div id="ember217" class="ember-view"><!----></div>
+                          <input placeholder="" disabled="" class="form-control" type="text" value="<?php echo $row['company_name'];?>">
+                          
                             <small class="help-block">
                               To update, please contact customer support support@nextnow.africa
                             </small>
@@ -454,13 +501,13 @@ if(strlen($_SESSION['uid'])=="")
                       </div>
                     </div>
                     <div class="col-sm-6">
-                        <div id="ember218" class="ember-view"> 
+                        <div > 
                             <div class="form-group">
                                 <label for="company_email" class="control-label">
                                   Company email
                                 </label>
-                              <input placeholder="" disabled="" id="ember219" class="form-control ember-text-field ember-view" type="text">
-                              <div id="ember220" class="ember-view"><!----></div>
+                              <input placeholder="" disabled=""  class="form-control" type="text" value="<?php echo $row['company_email'];?>">
+                              
                                 <small class="help-block">
                                   To update, please contact customer support support@nextnow.africa
                                 </small>
@@ -470,13 +517,13 @@ if(strlen($_SESSION['uid'])=="")
                 </div>
                 <div class="row">
                   <div class="col-sm-6">
-                    <div id="ember221" class="ember-view"> 
+                    <div > 
                       <div class="form-group">
                           <label for="address" class="control-label">
                             Address
                           </label>
-                        <input placeholder="" disabled="" id="ember222" class="form-control ember-text-field ember-view" type="text">
-                        <div id="ember223" class="ember-view"><!----></div>
+                        <input placeholder="" disabled=""  class="form-control" type="text" value="<?php echo $row['address'];?>">
+                        
                           <small class="help-block">
                             To update, please contact customer support support@nextnow.africa
                           </small>
@@ -484,13 +531,13 @@ if(strlen($_SESSION['uid'])=="")
                     </div>
                   </div>
                   <div class="col-sm-6">
-                    <div id="ember224" class="ember-view">  
+                    <div >  
                       <div class="form-group">
                             <label for="reg_code" class="control-label">
                               Business Registration Code
                             </label>
-                          <input placeholder="" disabled="" id="ember225" class="form-control ember-text-field ember-view" type="text">
-                          <div id="ember226" class="ember-view"><!----></div>
+                          <input placeholder="" disabled=""  class="form-control" type="text" value="<?php echo $row['business_registration_code'];?>">
+                          
                             <small class="help-block">
                               To update, please contact customer support support@nextnow.africa
                             </small>
@@ -500,13 +547,13 @@ if(strlen($_SESSION['uid'])=="")
                 </div>
                 <div class="row">
                   <div class="col-sm-6">
-                    <div id="ember227" class="ember-view"> 
+                    <div> 
                       <div class="form-group">
                           <label for="vat_code" class="control-label">
                             VAT no.
                           </label>
-                        <input placeholder="" disabled="" id="ember228" class="form-control ember-text-field ember-view" type="text">
-                        <div id="ember229" class="ember-view"><!----></div>
+                        <input placeholder="" disabled=""  class="form-control" type="text" value="<?php echo $row['vat_no'];?>">
+                        
                           <small class="help-block">
                             To update, please contact customer support support@nextnow.africa
                           </small>
@@ -1058,6 +1105,7 @@ if(strlen($_SESSION['uid'])=="")
 
               <!-- <hr>
               <h5>Profile</h5> -->
+
               <div class="form-group">
                 <label for="name ">Company Name</label>
                 <input type="text" class="form-control" name="company_name"  placeholder="Enter Comapny Name" required >
@@ -1111,7 +1159,7 @@ if(strlen($_SESSION['uid'])=="")
               </div> -->
               <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="submit" name="submit" class="btn btn-primary">Submit</button>
+                <button type="submit" name="bsubmit" class="btn btn-primary">Submit</button>
               </div>
               
             </form>

@@ -197,12 +197,12 @@ class ProfileSummary extends connectionClass
 class BillingClass extends connectionClass
 {
     
-    public function billuploadfile($login_id,$carphoto,$vname,$vcontactno,$vemail,$licencephoto,$vaddress,$vstate){
-        $sql = mysqli_query($this->con,"INSERT INTO vehicle_document(login_id,carphoto, vname, vcontactno, vemail,licencephoto ,vaddress, vstate) 
-        VALUES ('$login_id','$carphoto','$vname','$vcontactno','$vemail','$licencephoto','$vaddress','$vstate')") ;
+    public function billuploadfile($login_id,$company_name,$company_email,$address,$business_registration_code,$vat_no){
+        $sql = mysqli_query($this->con,"INSERT INTO bill_summary(login_id,company_name, company_email,address, business_registration_code,vat_no) 
+        VALUES ('$login_id','$company_name','$company_email','$address','$business_registration_code','$vat_no')") ;
            
 
-           //print_r($sql);
+         // print_r($sql);
 
         // $sql = "INSERT INTO vehicle_document('carphoto', 'vname', 'vcontactno', 'vemail', 'licencephoto', 'vaddress', 'vstate') 
         // VALUES ('$carphoto','$vname','$vcontactno','$vemail','$licencephoto','$vaddress','$vstate')";
@@ -213,20 +213,20 @@ class BillingClass extends connectionClass
 
         //$vresult = mysqli_query($this->con,$sql);
         if ($sql) {
-            echo "<script type='text/javascript'>alert('Vehicle Data  is uploaded')</script>";
+            echo "<script type='text/javascript'>alert('Billing Information  is uploaded')</script>";
              echo("<meta http-equiv='refresh' content='0'>"); //Refresh by HTTP 'meta'
         }
         else {
-            echo "<script type='text/javascript'>alert('Data  is not been uploaded')</script>"; 
+            echo "<script type='text/javascript'>alert('Billing Data  is not been uploaded')</script>"; 
         }
     }
 
 
-    public function listvehicle()
+    public function listbillsummary()
     {
 
         $login_id = $_SESSION["uid"];
-         $sql = "SELECT *  FROM `vehicle_document` where login_id=$login_id";
+         $sql = "SELECT *  FROM `bill_summary` where login_id=$login_id";
         echo "$sql";
         $res = mysqli_query($this->con,$sql);
         return $res;

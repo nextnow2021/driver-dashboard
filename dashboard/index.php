@@ -122,6 +122,9 @@ if(strlen($_SESSION['uid'])=="")
                 <img src="img/Png/report.png" class="img-responsive mr-3"><span>My Reports</span></a></li>
               <li class="sidebar-list-item"><a href="earning.php" class="sidebar-link text-muted">
                 <img src="img/Png/Rand_Money.png" class="img-responsive mr-3"><span>Earning</span></a></li>
+
+              <li class="sidebar-list-item"><a href="vehicle_application.php" class="sidebar-link text-muted">
+                <img src="img/Png/Rand_Money.png" class="img-responsive mr-3"><span>Vehicle Application</span></a></li>  
               <!-- <li class="sidebar-list-item"><a href="myexperience.html" class="sidebar-link text-muted"><i class="o-survey-1 mr-3 text-gray"></i><span>My Experience</span></a></li> -->
               <li class="sidebar-list-item"><a href="support.php" class="sidebar-link text-muted">
                 <img src="img/Png/support.png" class="img-responsive mr-3"><span>Support</span></a></li>
