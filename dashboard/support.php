@@ -484,13 +484,13 @@ if(strlen($_SESSION['uid'])=="")
 
              <div class="row">
 
-               <div class="col-lg-4">
+               <div class="col-lg-3 offset-md-1">
                 <div class=" mb- mb-lg-0">         
                   <!-- <div class="card-header">
                     <h2 class="h6 mb-0 text-uppercase">Transaction history</h2>
                   </div> -->
                   <div >
-                    <p class="text-black mb-5 offset-md-1"> <br/> <br/>
+                    <p class="text-black mb-5 "> <br/> <br/>
                         offcice Address 1
                      </p>
                     <!-- <div class="d-flex justify-content-between align-items-start align-items-sm-center mb-4 flex-column flex-sm-row">
@@ -577,7 +577,7 @@ if(strlen($_SESSION['uid'])=="")
                 </div> -->
               </div>
              
-              <div class="col-lg-4">
+              <div class="col-lg-3 offset-md-1">
                 <div class=" mb- mb-lg-0">         
                   <!-- <div class="card-header">
                     <h2 class="h6 mb-0 text-uppercase">Transaction history</h2>
@@ -669,7 +669,7 @@ if(strlen($_SESSION['uid'])=="")
                   </div>
                 </div> -->
               </div>
-              <div class="col-lg-4">
+              <div class="col-lg-3 offset-md-1">
                 <div class=" mb- mb-lg-0">         
                   <!-- <div class="card-header">
                     <h2 class="h6 mb-0 text-uppercase">Transaction history</h2>

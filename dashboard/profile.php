@@ -23,7 +23,24 @@ if(isset($_POST["submit"]))
                 include_once 'action.php';
                $ProfileSummary=new ProfileSummary();
                // echo $getsubImage;
-               $ProfileSummary->profileuploadfile($_SESSION['uid'],$profile_image,$_POST["email"],$_POST["contactno"],$_POST["driving_licence_number"],$_POST["driver_licence_expiry_date"],$_POST["driver_vehicle_model"],$_POST["driver_vehicle_year"],$_POST["driver_vehicle_numberplate"],$_POST["driver_vehicle_seats"]);
+               $ProfileSummary->profileuploadfile($_SESSION['uid'],
+                $profile_image,
+                $_POST["email"],
+                $_POST["contactno"],
+                $_POST["driving_licence_number"],
+                $_POST["driver_licence_expiry_date"],
+                $_POST["driver_vehicle_model"],
+                $_POST["driver_year"],
+                $_POST["driver_vehicle_numberplate"],
+                $_POST["driver_seats"],
+              $_POST["vehicle_brand"],
+              $_POST["vehicle_disc_licence"],
+              $_POST["vehicle_licence_expire_date"],
+              $_POST["vehicle_year"],
+              $_POST["vehicle_registration_numberplate"],
+              $_POST["vehicle_seats"],
+               $_POST["vehicle_model"],
+               $_POST["vehicle_color"]);
               
             }
             else
@@ -112,6 +129,7 @@ if(strlen($_SESSION['uid'])=="")
     <!-- Custom stylesheet - for your changes-->
     <link rel="stylesheet" href="css/custom.css">
     <!-- Favicon-->
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
     <link rel="shortcut icon" href="img/favicon.png?3">
     <!-- Tweaks for older IEs--><!--[if lt IE 9]>
         <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
@@ -471,6 +489,135 @@ if(strlen($_SESSION['uid'])=="")
                     </div>
                 </div>
               </div>
+
+               <h4 class="m-t-md">
+        <strong>Vehicle Information</strong>
+      </h4>
+      <p>Vehicle can currently select this car in the app.</p>
+              <div class="row">
+                <div class="col-sm-6">
+                  <div id="ember203" class="ember-view"> 
+                    <div class="form-group">
+                        <label for="driver_vehicle_model" class="control-label">
+                         Brand
+                        </label>
+                      <input placeholder="" disabled="" id="ember204" class="form-control ember-text-field ember-view" type="text">
+                      <div id="ember205" class="ember-view"><!----></div>
+                        <small class="help-block">
+                          To update, please contact customer support support@nextnow.africa
+                        </small>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                  <div id="ember206" class="ember-view">  
+                    <div class="form-group">
+                        <label for="driver_vehicle_year" class="control-label">
+                          Vehicle disc control number Licence
+                        </label>
+                      <input placeholder="" disabled="" id="ember207" class="form-control ember-text-field ember-view" type="text">
+                      <div id="ember208" class="ember-view"><!----></div>
+                        <small class="help-block">
+                          To update, please contact customer support support@nextnow.africa
+                        </small>
+                    </div>
+                   </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-sm-6">
+                  <div id="ember209" class="ember-view">
+                    <div class="form-group">
+                        <label for="driver_vehicle_reg_number" class="control-label">
+                          Registration Number plate
+                        </label>
+                      <input placeholder="" disabled="" id="ember210" class="form-control ember-text-field ember-view" type="text">
+                      <div id="ember211" class="ember-view"><!----></div>
+                        <small class="help-block">
+                          To update, please contact customer support support@nextnow.africa
+                        </small>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                    <div id="ember212" class="ember-view">  
+                      <div class="form-group">
+                          <label for="driver_vehicle_seats" class="control-label">
+                            Vehicle licence Expire date
+                          </label>
+                          <input placeholder="" disabled="" id="ember213" class="form-control ember-text-field ember-view" type="text">
+                          <div id="ember214" class="ember-view"><!----></div>
+                          <small class="help-block">
+                            To update, please contact customer support support@nextnow.africa
+                          </small>
+                      </div>
+                    </div>
+                </div>
+              </div>
+
+               <div class="row">
+                <div class="col-sm-6">
+                  <div id="ember209" class="ember-view">
+                    <div class="form-group">
+                        <label for="driver_vehicle_reg_number" class="control-label">
+                         Vehicle Model
+                        </label>
+                      <input placeholder="" disabled="" id="ember210" class="form-control ember-text-field ember-view" type="text">
+                      <div id="ember211" class="ember-view"><!----></div>
+                        <small class="help-block">
+                          To update, please contact customer support support@nextnow.africa
+                        </small>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                    <div id="ember212" class="ember-view">  
+                      <div class="form-group">
+                          <label for="driver_vehicle_seats" class="control-label">
+                           Vehicle Seats
+                          </label>
+                          <input placeholder="" disabled="" id="ember213" class="form-control ember-text-field ember-view" type="text">
+                          <div id="ember214" class="ember-view"><!----></div>
+                          <small class="help-block">
+                            To update, please contact customer support support@nextnow.africa
+                          </small>
+                      </div>
+                    </div>
+                </div>
+              </div>
+
+               <div class="row">
+                <div class="col-sm-6">
+                  <div id="ember209" class="ember-view">
+                    <div class="form-group">
+                        <label for="driver_vehicle_reg_number" class="control-label">
+                         Vehicle Year
+                        </label>
+                      <input placeholder="" disabled="" id="ember210" class="form-control ember-text-field ember-view" type="text">
+                      <div id="ember211" class="ember-view"><!----></div>
+                        <small class="help-block">
+                          To update, please contact customer support support@nextnow.africa
+                        </small>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                    <div id="ember212" class="ember-view">  
+                      <div class="form-group">
+                          <label for="driver_vehicle_seats" class="control-label">
+                            Vehicle Color
+                          </label>
+                          <input placeholder="" disabled="" id="ember213" class="form-control ember-text-field ember-view" type="text">
+                          <div id="ember214" class="ember-view"><!----></div>
+                          <small class="help-block">
+                            To update, please contact customer support support@nextnow.africa
+                          </small>
+                      </div>
+                    </div>
+                </div>
+              </div>
+
+
     <h4 class="m-t-md">
       <strong>Billing Information</strong>
     </h4>
@@ -656,7 +803,7 @@ if(strlen($_SESSION['uid'])=="")
                   <div id="ember245" class="ember-view">  
                     <div class="form-group">
                         <label for="account_iban" class="control-label">
-                          UK Bank Account Number
+                          Bank Account Number
                         </label>
                       <input placeholder="" disabled="" id="ember246" class="form-control ember-text-field ember-view" type="text">
                       <div id="ember247" class="ember-view"><!----></div>
@@ -1036,17 +1183,34 @@ if(strlen($_SESSION['uid'])=="")
               </div>
               <div class="form-group">
                 <label for="pincode">Driver Licence Expiry Date</label>
-                <input type="tel" class="form-control" name="driver_licence_expiry_date"  placeholder="Enter Driver Licence Expiry Date">
+                <input type="tel" class="form-control" name="driver_licence_expiry_date"  placeholder="Enter Driver Licence Expiry Date" id="datepicker2" value="mm/dd/yyyy">
               </div>
               <hr>
               <h5>Driver vehicle</h5>
                <div class="form-group">
                 <label for="locality">Model</label>
-                <input type="text" class="form-control" name="driver_vehicle_model"  placeholder="Enter Model">
+                <select  class="form-control" name="driver_vehicle_model" placeholder="Enter Year">
+                  <option selected> Choose </option>
+                    <?php 
+                       for($i = 1950 ; $i < date('Y'); $i++){
+                          echo "<option>$i</option>";
+                       }
+                    ?>
+                    </select>
+               <!--  <input type="text" class="form-control" name="driver_vehicle_model"  placeholder="Enter Model"> -->
               </div>
               <div class="form-group">
-                <label for="city">Year</label>
-                <input type="text" class="form-control" name="driver_vehicle_year" placeholder="Enter Year">
+                 <label for="city">Year</label>
+                <select  class="form-control" name="driver_year" placeholder="Enter Year">
+                  <option selected> Choose </option>
+                    <?php 
+                       for($i = 1950 ; $i < date('Y'); $i++){
+                          echo "<option>$i</option>";
+                       }
+                    ?>
+                    </select>
+               
+               <!--  <input type="text" class="form-control" name="driver_vehicle_year" placeholder="Enter Year"> -->
               </div>
                <div class="form-group">
                 <label for="district">Number plate</label>
@@ -1054,8 +1218,89 @@ if(strlen($_SESSION['uid'])=="")
               </div> 
               <div class="form-group">
                 <label for="state">Seats</label>
-                <input type="text" class="form-control" name="driver_vehicle_seats" placeholder="Enter seats" required>
+                <select class="form-control"  name="driver_seats">
+                              <option selected> Choose </option>
+                              <option value="1">1</option>
+                              <option value="2">2</option>
+                              <option value="3">3</option>
+                              <option value="4">4</option>
+                              <option value="5">5</option>
+                              <option value="6">6</option>
+                              <option value="7">7</option>
+                            </select>
+                <!-- <input type="text" class="form-control" name="driver_vehicle_seats" placeholder="Enter seats" required> -->
               </div>
+
+              <hr>
+              <h5> vehicle Information</h5>
+               <div class="form-group">
+                <label for="locality"> Vehicle Brand</label>
+                <input type="text" class="form-control" name="vehicle_brand"  placeholder="Enter Brand">
+              </div>
+              <div class="form-group">
+                <label for="locality"> 
+Vehicle disc control number Licence</label>
+                <input type="text" class="form-control" name="
+vehicle_disc_licence"  placeholder="Enter
+vehicle disc control number Licence">
+              </div>
+               <div class="form-group">
+                <label for="locality"> Vehicle licence Expire date</label>
+                <input type="text" class="form-control" name="
+vehicle_licence_expire_date"  placeholder="Enter
+Vehicle licence Expire date" id="datepicker" value="mm/dd/yyyy">
+              </div>
+              <div class="form-group">
+                 <label for="city">Vehicle Year</label>
+                <select  class="form-control" name="vehicle_year" placeholder="Enter Year">
+                  <option selected> Choose </option>
+                    <?php 
+                       for($i = 1950 ; $i < date('Y'); $i++){
+                          echo "<option>$i</option>";
+                       }
+                    ?>
+                    </select>
+               
+               <!--  <input type="text" class="form-control" name="driver_vehicle_year" placeholder="Enter Year"> -->
+              </div>
+               <div class="form-group">
+                <label for="district">Registration Number plate</label>
+                <input type="text" class="form-control" name="vehicle_registration_numberplate"  placeholder="Enter number plate">
+              </div> 
+              <div class="form-group">
+                <label for="state">Vehicle Seats</label>
+                    <select class="form-control"  name="vehicle_seats">
+                        <option selected> Choose </option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                    </select>
+                <!-- <input type="text" class="form-control" name="driver_vehicle_seats" placeholder="Enter seats" required> -->
+              </div>
+
+              <div class="form-group">
+                <label for="locality">Vehicle Model</label>
+                <select  class="form-control" name="vehicle_model" placeholder="Enter Year">
+                  <option selected> Choose </option>
+                    <?php 
+                       for($i = 1950 ; $i < date('Y'); $i++){
+                          echo "<option>$i</option>";
+                       }
+                    ?>
+                    </select>
+               <!--  <input type="text" class="form-control" name="driver_vehicle_model"  placeholder="Enter Model"> -->
+              </div>
+              <div class="form-group">
+                <label for="locality">Vehicle Color</label>
+              
+                <input type="text" class="form-control" name="vehicle_color"  placeholder="Enter Vehicle Color">
+              </div>
+
+
              
               <!-- <div class="form-group">
                 <label for="exampleInputPassword1">Password</label>
@@ -1192,6 +1437,18 @@ if(strlen($_SESSION['uid'])=="")
             }); 
         </script>
 
+        <!--  ################ Calender ###############-->
+        <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+        <script>
+        $( function() {
+          $( "#datepicker,#datepicker2" ).datepicker();
+        } );
+        </script>
+
+       </script>
+        
+<!-- ############ //Calender ############################-->
   </body>
 </html>
 <?php } ?>

@@ -153,9 +153,26 @@ class DocSummaryClass extends connectionClass{
 class ProfileSummary extends connectionClass
 {
     
-    public function profileuploadfile($login_id,$profile_image,$email,$contactno,$driving_licence_number,$driver_licence_expiry_date,$driver_vehicle_model,$driver_vehicle_year,$driver_vehicle_numberplate,$driver_vehicle_seats){
-        $sql = mysqli_query($this->con,"INSERT INTO profile_summary(login_id,profile_image, email, contactno, driving_licence_number,driver_licence_expiry_date ,driver_vehicle_model, driver_vehicle_year,driver_vehicle_numberplate,driver_vehicle_seats) 
-        VALUES ('$login_id','$profile_image','$email','$contactno','$driving_licence_number','$driver_licence_expiry_date','$driver_vehicle_model','$driver_vehicle_year,'$driver_vehicle_numberplate','$driver_vehicle_seats')") ;
+    public function profileuploadfile($login_id,$profile_image,$email,$contactno,$driving_licence_number,$driver_licence_expiry_date,$driver_vehicle_model,$driver_year,$driver_vehicle_numberplate,$driver_vehicle_seats,$vehicle_brand,$vehicle_disc_licence,
+        $vehicle_licence_expire_date,$vehicle_year,$vehicle_registration_numberplate,$vehicle_model,$vehicle_color){
+        $sql = mysqli_query($this->con,"INSERT INTO profile_summary(login_id,profile_image, email, contactno, driving_licence_number, driver_licence_expiry_date, driver_vehicle_model, driver_year, driver_vehicle_numberplate, driver_seats, vehicle_brand, vehicle_disc_licence, vehicle_licence_expire_date, vehicle_year, vehicle_registration_numberplate, vehicle_model, vehicle_color) 
+        VALUES ('$login_id',
+        '$profile_image',
+        '$email',
+        '$contactno',
+        '$driving_licence_number',
+        '$driver_licence_expiry_date',
+        '$driver_vehicle_model',
+        '$driver_year',
+        '$driver_vehicle_numberplate',
+        '$driver_vehicle_seats',
+        '$vehicle_brand',
+        '$vehicle_disc_licence',
+        '$vehicle_licence_expire_date',
+        '$vehicle_year',
+        '$vehicle_registration_numberplate',
+        '$vehicle_model',
+        '$vehicle_color')") ;
            
 
            //print_r($sql);

@@ -287,16 +287,18 @@ if(strlen($_SESSION['uid'])=="")
                 </div>
       -->
 
-          <?php
-
+            <?php
+                  
                 include_once('action.php');
                 //$sql=$fetchdata->fetchdata();
                 $DocSummaryClass= new DocSummaryClass();
                 $sql=$DocSummaryClass->listdocsummary();
                 //$cnt=1;
-                while($row=mysqli_fetch_array($sql))
-                {
-          ?>        
+                $row = mysqli_fetch_array($sql);
+
+              ?>
+
+                
             <div class="row mb-4">
               <div class="col-lg-7 mb-4 mb-lg-0">
                 <div class="card">
@@ -319,7 +321,7 @@ if(strlen($_SESSION['uid'])=="")
                             <div class="col-xs-12">
                                     <p>
                                       <a href="img scr=photo_img/<?php echo $row
-                                        ['driver_id_document']; ?> "" target='_self' >
+                                        ['driver_id_document']; ?> " target='_self' >
                                         <span class="icon icon-text-document"></span> 
                                        
                                         <img  class="img-trigger" src="photo_img/<?php echo $row['driver_id_document'];?>" width=100 height=100 data-zoom-image="photo_img/<?php echo $row['photo'];?>" id="zoom">  
@@ -727,7 +729,7 @@ if(strlen($_SESSION['uid'])=="")
               </div>
 
             </div>
-            <?php  } ?> <!-- $cnt=$cnt+1; -->
+           
 
 
             <!-- //panel-4 -->
