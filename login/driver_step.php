@@ -20,8 +20,8 @@
 <body>
 <div class="container-fluid">
     <div class="row justify-content-center">
-        <div class="col-11 col-sm-9 col-md-7 col-lg-6 col-xl-5 text-center p-0 mt-3 mb-2">
-            <div class="card px-0 pt-4 pb-0 mt-3 mb-3">
+        <div class="col-11 col-sm-9 col-md-12 col-lg-10 col-xl-5 text-center p-0 mt-3 mb-2">
+            <div class="card px-0 pt-4 pb-0 mt-3 mb-3" style="border:none;">
                 <h2 id="heading">Sign Up Your User Account</h2>
                 <p>Fill all form field to go to next step</p>
                 <form id="msform">
@@ -56,8 +56,17 @@
                                 <div class="col-5">
                                     <h2 class="steps">Step 2 - 4</h2>
                                 </div>
-                            </div> <label class="fieldlabels">First Name: *</label> <input type="text" name="fname" placeholder="First Name"> <label class="fieldlabels">Last Name: *</label> <input type="text" name="lname" placeholder="Last Name"> <label class="fieldlabels">Contact No.: *</label> <input type="text" name="phno" placeholder="Contact No."> <label class="fieldlabels">Alternate Contact No.: *</label> <input type="text" name="phno_2" placeholder="Alternate Contact No.">
-                        </div> <input type="button" name="next" class="next action-button" value="Next"> <input type="button" name="previous" class="previous action-button-previous" value="Previous">
+                            </div>
+                             <label class="fieldlabels">First Name: *</label>
+                                 <input type="text" name="fname" placeholder="First Name">
+                             <label class="fieldlabels">Last Name: *</label> 
+                                 <input type="text" name="lname" placeholder="Last Name"> 
+                             <label class="fieldlabels">Contact No.: *</label> 
+                                <input type="text" name="phno" placeholder="Contact No."> 
+                             <label class="fieldlabels">Alternate Contact No.: *</label> 
+                                <input type="text" name="phno_2" placeholder="Alternate Contact No.">
+                        </div> 
+                        <input type="button" name="next" class="next action-button" value="Next"> <input type="button" name="previous" class="previous action-button-previous" value="Previous">
                     </fieldset>
                     <fieldset>
                         <div class="form-card">
