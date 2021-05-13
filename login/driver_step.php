@@ -116,9 +116,9 @@
                     <ul id="progressbar">
                             <li class="active" id="account"><strong>Account</strong></li>
                             <li id="personal"><strong>Personal & vehicle info</strong></li>
-                            <li id="payment"><strong>Documents & fees</strong></li>
-                            <li id="payment"><strong>Documents</strong></li>
-                            <li id="confirm"><strong>Payment details</strong></li>
+                            <li class="document_fees" href="#document_fees"><strong>Documents & fees</strong></li>
+                            <li id="documents"><strong>Documents</strong></li>
+                            <li id="payment"><strong>Payment details</strong></li>
                         </ul>
                     <div class="progress">
                         <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuemin="0" aria-valuemax="100" style="width: 25%;"></div>
@@ -130,7 +130,10 @@
                                     <h2 class="fs-title">Account Information:</h2>
                                 </div>
                                 
-                            </div> <label class="fieldlabels">Email: *</label> <input type="email" name="email" placeholder="Email Id"> <label class="fieldlabels">Username: *</label> <input type="text" name="uname" placeholder="UserName"> <label class="fieldlabels">Password: *</label> <input type="password" name="pwd" placeholder="Password"> <label class="fieldlabels">Confirm Password: *</label> <input type="password" name="cpwd" placeholder="Confirm Password">
+                            </div> <label class="fieldlabels">Email: *</label>
+                            <input type="email" name="email" placeholder="Email Id"> <label class="fieldlabels">Username: *</label>
+                             <input type="text" name="uname" placeholder="UserName"> <label class="fieldlabels">Password: *</label>
+                              <input type="password" name="pwd" placeholder="Password"> <label class="fieldlabels">Confirm Password: *</label> <input type="password" name="cpwd" placeholder="Confirm Password">
                         </div> <input type="button" name="next" class="next action-button" value="Next">
                     </fieldset>
                     <fieldset>
@@ -414,15 +417,15 @@
                                 </div>
                         <input type="button" name="next" class="next action-button" value="Next"> <input type="button" name="previous" class="previous action-button-previous" value="Previous">
                     </fieldset>
-                    <fieldset>
+                    <fieldset id="document_fees">
                         <div class="form-card">
                             <div class="row">
                                 <div class="col-7">
                                     <h2 class="fs-title">Documents & fees:</h2>
                                 </div>
                                 
-                            </div> <label class="fieldlabels">National ID: *</label> <input type="text" name="NationalID" placeholder="National ID">
-                             <label class="fieldlabels">Driver license: *</label> <input type="text" name="Driverlicense" placeholder="Driver license">
+                            </div> <label class="fieldlabels">National ID: *</label> <input type="text" name="NationalID" placeholder="National ID" required/>
+                             <label class="fieldlabels">Driver license: *</label> <input type="text" name="Driverlicense" placeholder="Driver license" required/>
                              
 
                         </div> <input type="button" name="next" class="next action-button" value="Submit"> <input type="button" name="previous" class="previous action-button-previous" value="Previous">
@@ -537,20 +540,40 @@
 
                              <br>
 
-                             <div class="document-container m-t">
+                              <div class="document-container m-t">
                                        <div class="row">
                                     <div class="col-xs-12">
       <h3 class="pull-left">Operating License</h3>
      
     </div>
     <span class="text-danger float-right ml-3">Required *</span>
-    <div class="col-xs-12">
+    <div class="col-md-12 ml-0">
       <p>Obtained from the Department of Transport in JHB or Pretoria..</p>
     </div>
      <label class="fieldlabels">Upload:</label> 
                                 <input type="file" name="pic" accept="image/*"> 
                                 </div>
                             </div>
+                            
+                            
+
+                            <!--  <div class="document-container m-t">
+                                       <div class="row">
+                                    <div class="col-xs-12">
+      <h3 class="pull-left">Operating License</h3>
+     
+    </div>
+    <span class="text-danger float-right ml-3">Required *</span>
+
+    <div class="col-xs-12">
+        <br>
+      <p>Obtained from the Department of Transport in JHB or Pretoria..</p>
+    </div>
+    
+     <label class="fieldlabels">Upload:</label> 
+                                <input type="file" name="pic" accept="image/*"> 
+                                </div>
+                            </div> -->
 
                              <br>
 

@@ -148,7 +148,7 @@ p {
 #progressbar li {
     list-style-type: none;
     font-size: 15px;
-    width: 25%;
+    width: 20%;
     float: left;
     position: relative;
     font-weight: 400
@@ -156,22 +156,26 @@ p {
 
 #progressbar #account:before {
     font-family: FontAwesome;
-    content: "\f13e"
+    content: "1"
 }
 
 #progressbar #personal:before {
     font-family: FontAwesome;
-    content: "\f007"
+    content: "2"
+}
+
+#progressbar .document_fees:before {
+    font-family: FontAwesome;
+    content: "3"
+}
+#progressbar #documents:before {
+    font-family: FontAwesome;
+    content: "4"
 }
 
 #progressbar #payment:before {
     font-family: FontAwesome;
-    content: "\f030"
-}
-
-#progressbar #confirm:before {
-    font-family: FontAwesome;
-    content: "\f00c"
+    content: "5"
 }
 
 #progressbar li:before {
