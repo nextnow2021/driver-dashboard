@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 09, 2021 at 09:21 AM
+-- Generation Time: May 18, 2021 at 02:21 PM
 -- Server version: 10.1.37-MariaDB
 -- PHP Version: 5.6.39
 
@@ -153,6 +153,25 @@ INSERT INTO `login` (`login_id`, `FullName`, `Username`, `UserEmail`, `Password`
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `payment_details`
+--
+
+CREATE TABLE `payment_details` (
+  `bill_id` int(255) NOT NULL,
+  `login_id` int(6) NOT NULL,
+  `bill_type` varchar(255) NOT NULL,
+  `company_name` varchar(255) NOT NULL,
+  `address` varchar(255) NOT NULL,
+  `registration_code` varchar(255) NOT NULL,
+  `vat_number` varchar(255) NOT NULL,
+  `bank_account_name` varchar(255) NOT NULL,
+  `bank_account` varchar(255) NOT NULL,
+  `bank_name` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `profile_summary`
 --
 
@@ -237,6 +256,13 @@ ALTER TABLE `login`
   ADD PRIMARY KEY (`login_id`);
 
 --
+-- Indexes for table `payment_details`
+--
+ALTER TABLE `payment_details`
+  ADD PRIMARY KEY (`bill_id`),
+  ADD KEY `foreign-key` (`login_id`);
+
+--
 -- Indexes for table `profile_summary`
 --
 ALTER TABLE `profile_summary`
@@ -279,6 +305,12 @@ ALTER TABLE `login`
   MODIFY `login_id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
+-- AUTO_INCREMENT for table `payment_details`
+--
+ALTER TABLE `payment_details`
+  MODIFY `bill_id` int(255) NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT for table `profile_summary`
 --
 ALTER TABLE `profile_summary`
@@ -305,6 +337,12 @@ ALTER TABLE `bill_summary`
 --
 ALTER TABLE `doc_summary`
   ADD CONSTRAINT `foreign key` FOREIGN KEY (`login_id`) REFERENCES `login` (`login_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `payment_details`
+--
+ALTER TABLE `payment_details`
+  ADD CONSTRAINT `foreign-key` FOREIGN KEY (`login_id`) REFERENCES `login` (`login_id`);
 
 --
 -- Constraints for table `profile_summary`
