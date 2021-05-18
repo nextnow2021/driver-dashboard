@@ -120,10 +120,10 @@
                             <li id="documents"><strong>Documents</strong></li>
                             <li id="payment"><strong>Payment details</strong></li>
                         </ul>
-                    <div class="progress">
+                    <!-- <div class="progress">
                         <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuemin="0" aria-valuemax="100" style="width: 25%;"></div>
-                    </div> <br> <!-- fieldsets -->
-                    <fieldset>
+                    </div> --> <br> <!-- fieldsets -->
+                   <!--  <fieldset>
                         <div class="form-card">
                             <div class="row">
                                 <div class="col-7">
@@ -135,8 +135,8 @@
                              <input type="text" name="uname" placeholder="UserName"> <label class="fieldlabels">Password: *</label>
                               <input type="password" name="pwd" placeholder="Password"> <label class="fieldlabels">Confirm Password: *</label> <input type="password" name="cpwd" placeholder="Confirm Password">
                         </div> <input type="button" name="next" class="next action-button" value="Next">
-                    </fieldset>
-                    <fieldset>
+                    </fieldset> -->
+                    <!-- <fieldset>
                         <div class="form-card">
                             <div class="row">
                                 <div class="col-7">
@@ -317,59 +317,19 @@
                                        
                                          <label class="fieldlabels">Vehicle manufacturer
                                                 : *</label>
-                                          <!--  <select class="form-control"  id='firstList' name='firstList' onClick="getFoodItem()">
-    </select> -->
+                                          
                                                           <select size="1" id="vehiclemanufacture" title="" name="vehiclemanufacture" class="form-control">
     <option value="">-Select Your Vehicle-</option>
     <option value="audi">Audi</option>
     <option value="volkswagon">Volkswagon</option>
 </select>
 
-<!-- <div class="container">
-    <div class="airman">
-        Line of text for Airman
-    </div>
-    <div class="senior-airman">
-        Line of text for Senior Airman
-    </div>
-</div>
 
-<div class="container">
-    <div class="airman">
-        <select>
-            <option>Airman Stuff</option>
-        </select>
-    </div>
-    <div class="senior-airman">
-        <select>
-            <option>Senior Airman Stuff</option>
-        </select>
-    </div>
-</div> -->
-<!-- <select id="options">
-  <option value="" disabled selected>Select an option</option>
-  <option value="Option 1">Option 1</option>
-  <option value="Option 2">Option 2</option>
-  <option value="Option 3">Option 3</option>
-</select>
-
-<select id="choices">
-  <option value="" disabled selected>Please select an option</option>
-</select> -->
-                                            <!--  <input type="text" name="vvmanufacture" placeholder="Vehicle manufacturer"> -->
                                          <label class="fieldlabels">Vehicle model: *</label> 
-                                       <!--  <select class="form-control"  id='secondList' name='secondList' >
-    </select> -->
-                                          <!-- <select size="1" id="Rank" title="" name="Rank">
-    <option value="">-Select Your Rank-</option>
-    <option value="airman">Airman</option>
-    <option value="senior-airman">Senior Airman</option>
-</select> -->
-
+          
 
 
                                         
-                                            <!--  <input type="text" name="vehiclemodel" placeholder="Vehicle model">  -->
 
 
                                             <div class="container" >
@@ -398,12 +358,12 @@
                                             </div>
                                         </div>
                                          <label class="fieldlabels">Vehicle year: *</label> 
-                                           <!--  <input type="text" name="vehicleyear" placeholder="Vehicle year.">  -->
+                                          
                                            <select  class="form-control" name="vehicleyear" placeholder="Enter Year">
                                               <option selected> Choose </option>
                                                 <?php 
-                                                   for($i = 1950 ; $i < date('Y'); $i++){
-                                                      echo "<option>$i</option>";
+                                                   // for($i = 1950 ; $i < date('Y'); $i++){
+                                                   //    echo "<option>$i</option>";
                                                    }
                                                 ?>
                                            </select>
@@ -416,8 +376,8 @@
                                      </div>
                                 </div>
                         <input type="button" name="next" class="next action-button" value="Next"> <input type="button" name="previous" class="previous action-button-previous" value="Previous">
-                    </fieldset>
-                    <fieldset id="document_fees">
+                    </fieldset> -->
+                   <!--  <fieldset id="document_fees">
                         <div class="form-card">
                             <div class="row">
                                 <div class="col-7">
@@ -429,8 +389,8 @@
                              
 
                         </div> <input type="button" name="next" class="next action-button" value="Submit"> <input type="button" name="previous" class="previous action-button-previous" value="Previous">
-                    </fieldset>
-                      <fieldset>
+                    </fieldset> -->
+                      <!-- <fieldset>
                             <div class="form-card">
                                 <div class="row">
                                     <div class="col-7">
@@ -555,27 +515,6 @@
                                 </div>
                             </div>
                             
-                            
-
-                            <!--  <div class="document-container m-t">
-                                       <div class="row">
-                                    <div class="col-xs-12">
-      <h3 class="pull-left">Operating License</h3>
-     
-    </div>
-    <span class="text-danger float-right ml-3">Required *</span>
-
-    <div class="col-xs-12">
-        <br>
-      <p>Obtained from the Department of Transport in JHB or Pretoria..</p>
-    </div>
-    
-     <label class="fieldlabels">Upload:</label> 
-                                <input type="file" name="pic" accept="image/*"> 
-                                </div>
-                            </div> -->
-
-                             <br>
 
 
                              <div class="document-container m-t">
@@ -600,27 +539,8 @@ For instructions and how to complete the form and for more information regarding
                              <br>
 
 
-
-                                
-                               
-
-                               <!--  <label class="fieldlabels">Profile Picture:</label> 
-                                <input type="file" name="pic" accept="image/*">
-
-                                <label class="fieldlabels">Aadhaar Card:</label> 
-                                <input type="file" name="pic" accept="image/*"> 
-
-                                <label class="fieldlabels">Vehicle Registration Document:</label> 
-                                <input type="file" name="pic" accept="image/*">
-
-                                <label class="fieldlabels">Vehicle Picture:</label> 
-                                <input type="file" name="pic" accept="image/*">
-
-                                <label class="fieldlabels">Vehicle Permit:</label> 
-                                <input type="file" name="pic" accept="image/*"> -->
-
                             </div> <input type="button" name="next" class="next action-button" value="Submit" /> <input type="button" name="previous" class="previous action-button-previous" value="Previous" />
-                        </fieldset>
+                        </fieldset> -->
                          <fieldset>
                             <div class="form-card">
                                 <div class="row">
@@ -636,7 +556,6 @@ For instructions and how to complete the form and for more information regarding
     <option value="">Person</option>
     <option value="">Other</option>
 </select>
-                                <!-- <input type="text" name="phno" placeholder="3345667879" /> -->
 
                                 <label class="fieldlabels">Company name *</label> 
                                 <input type="text" name="phno" placeholder="ABC Taxis Ltd" />
