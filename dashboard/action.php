@@ -1,6 +1,7 @@
 <!-- hex = 7350fc -->
 <?php
-require_once ("../login/connection.php");
+
+require_once('../login/connection.php');
 //require_once("../login/login.php");
 class DocumentClass extends connectionClass
 {
